@@ -1,19 +1,24 @@
 {
-  "metadata": {
-    "team": "FINNOVA",
-    "company": "FashionClub",
-    "industry": "Corbatul Textile & Fashion Apparel",
-    "simulationRounds": 4,
-    "years": [
-      2025,
-      2026,
-      2027,
-      2028,
-      2029
-    ],
-    "generatedAt": "2026-11-06",
-    "author": "Antigravity SDD Platform"
+  "meta": {
+    "teamName": "FINNOVA",
+    "primaryFirmId": "fashionclub",
+    "primaryFirmName": "FashionClub (FINNOVA)",
+    "totalFirms": 7,
+    "totalPeriods": 4,
+    "generatedAt": "2026-11-06"
   },
+  "periods": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "years": [
+    2026,
+    2027,
+    2028,
+    2029
+  ],
   "firms": [
     {
       "id": "fashionclub",
@@ -65,734 +70,1240 @@
       "badge": "Top 7"
     }
   ],
-  "companyValuation": {
-    "years": [
-      2024,
-      2025,
-      2026,
-      2027,
-      2028,
-      2029
-    ],
-    "ranking2029": [
-      {
-        "rank": 1,
-        "firmId": "stuart20",
-        "name": "Stuart20",
-        "value": 3005.2,
-        "growth": "+9.7%"
-      },
-      {
-        "rank": 2,
-        "firmId": "roura1940",
-        "name": "Roura1940",
-        "value": 2924.3,
-        "growth": "+8.2%"
-      },
-      {
-        "rank": 3,
-        "firmId": "spain10",
-        "name": "Spain10",
-        "value": 2248.7,
-        "growth": "+26.1%"
-      },
-      {
-        "rank": 4,
-        "firmId": "fashionclub",
-        "name": "FashionClub (FINNOVA)",
-        "value": 2231.9,
-        "growth": "-2.5%"
-      },
-      {
-        "rank": 5,
-        "firmId": "smartone",
-        "name": "SmartOne",
-        "value": 2098.0,
-        "growth": "+8.8%"
-      },
-      {
-        "rank": 6,
-        "firmId": "puntoone",
-        "name": "PuntoOne",
-        "value": 2084.4,
-        "growth": "-3.9%"
-      },
-      {
-        "rank": 7,
-        "firmId": "realman",
-        "name": "RealMan",
-        "value": 1428.3,
-        "growth": "-2.1%"
-      }
-    ],
-    "historical": {
-      "fashionclub": [
-        2175.0,
-        2329.3,
-        2360.3,
-        2373.1,
-        2288.2,
-        2231.9
-      ],
-      "stuart20": [
-        2175.0,
-        2329.3,
-        2416.2,
-        2448.6,
-        2740.0,
-        3005.2
-      ],
-      "roura1940": [
-        2175.0,
-        2329.3,
-        2387.6,
-        2646.8,
-        2703.9,
-        2924.3
-      ],
-      "spain10": [
-        2175.0,
-        2329.3,
-        2514.3,
-        2809.5,
-        1782.8,
-        2248.7
-      ],
-      "smartone": [
-        2175.0,
-        2329.3,
-        2065.2,
-        1581.4,
-        1929.0,
-        2098.0
-      ],
-      "puntoone": [
-        2175.0,
-        2329.3,
-        2256.6,
-        1777.2,
-        2169.5,
-        2084.4
-      ],
-      "realman": [
-        2175.0,
-        2329.3,
-        1593.7,
-        1565.6,
-        1458.2,
-        1428.3
-      ]
-    },
-    "componentsFashionClub": [
-      {
-        "parameter": "Resultados Económicos",
-        "2024": 800,
-        "2025": 797,
-        "2026": 775,
-        "2027": 755,
-        "2028": 723,
-        "2029": 705,
-        "industryMean2029": 873
-      },
-      {
-        "parameter": "Patrimonio - Solvencia",
-        "2024": 200,
-        "2025": 249,
-        "2026": 234,
-        "2027": 299,
-        "2028": 203,
-        "2029": 173,
-        "industryMean2029": 212
-      },
-      {
-        "parameter": "Valor de Marca",
-        "2024": 200,
-        "2025": 216,
-        "2026": 206,
-        "2027": 200,
-        "2028": 202,
-        "2029": 206,
-        "industryMean2029": 219
-      },
-      {
-        "parameter": "Valor Producto + Distribución",
-        "2024": 200,
-        "2025": 247,
-        "2026": 290,
-        "2027": 326,
-        "2028": 333,
-        "2029": 342,
-        "industryMean2029": 331
-      },
-      {
-        "parameter": "Presupuestación - Resultados",
-        "2024": 375,
-        "2025": 375,
-        "2026": 394,
-        "2027": 362,
-        "2028": 410,
-        "2029": 426,
-        "industryMean2029": 311
-      },
-      {
-        "parameter": "Presupuestación - Balance",
-        "2024": 300,
-        "2025": 300,
-        "2026": 305,
-        "2027": 313,
-        "2028": 304,
-        "2029": 281,
-        "industryMean2029": 231
-      },
-      {
-        "parameter": "Participación de Mercado",
-        "2024": 100,
-        "2025": 100,
-        "2026": 110,
-        "2027": 120,
-        "2028": 115,
-        "2029": 100,
-        "industryMean2029": 106
-      }
-    ]
-  },
-  "pnlData": {
-    "2026": {
-      "ingresos": 3404863,
-      "costeVentas": 2258947,
-      "margenBruto": 1145916,
-      "ratioMargen": 33.67,
-      "marketing": 185000,
-      "personal": 665483,
-      "gastosGenerales": 956897,
-      "depreciacion": 150000,
-      "totalGastosOperacion": 1957380,
-      "resultadoBruto": -811464,
-      "gastosFinancieros": 51000,
-      "resultadoNeto": -562464
-    },
-    "2027": {
-      "ingresos": 3450661,
-      "costeVentas": 2345224,
-      "margenBruto": 1105437,
-      "ratioMargen": 32.04,
-      "marketing": 110000,
-      "personal": 793464,
-      "gastosGenerales": 948051,
-      "depreciacion": 150000,
-      "totalGastosOperacion": 2001515,
-      "resultadoBruto": -896078,
-      "gastosFinancieros": 65000,
-      "resultadoNeto": -646078
-    },
-    "2028": {
-      "ingresos": 3532401,
-      "costeVentas": 2266585,
-      "margenBruto": 1265816,
-      "ratioMargen": 35.83,
-      "marketing": 120000,
-      "personal": 959377,
-      "gastosGenerales": 1317519,
-      "depreciacion": 150800,
-      "totalGastosOperacion": 2667682,
-      "resultadoBruto": -1401866,
-      "gastosFinancieros": 73152,
-      "resultadoNeto": -1457017
-    },
-    "2029": {
-      "ingresos": 3561899,
-      "costeVentas": 2154931,
-      "margenBruto": 1406968,
-      "ratioMargen": 39.5,
-      "marketing": 120000,
-      "personal": 1156958,
-      "gastosGenerales": 3419752,
-      "depreciacion": 123300,
-      "totalGastosOperacion": 4939531,
-      "resultadoBruto": -3532563,
-      "gastosFinancieros": 79688,
-      "resultadoNeto": -3399251
-    }
-  },
-  "balanceData": {
-    "2025": {
-      "activoFijoNeto": 2545250,
-      "inventario": 78183,
-      "cuentasCobrar": 327035,
-      "cajaDisponible": 1916796,
-      "activoTotal": 5447264,
-      "patrimonioNeto": 3979739,
-      "prestamoLargoPlazo": 1219666,
-      "prestamoCortoPlazo": 283208,
-      "creditoExtraordinario": 0,
-      "proveedores": 0
-    },
-    "2026": {
-      "activoFijoNeto": 5126700,
-      "inventario": 59929,
-      "cuentasCobrar": 303057,
-      "cajaDisponible": 0,
-      "activoTotal": 5957186,
-      "patrimonioNeto": 3417274,
-      "prestamoLargoPlazo": 927406,
-      "prestamoCortoPlazo": 297748,
-      "creditoExtraordinario": 1327680,
-      "proveedores": 320000
-    },
-    "2027": {
-      "activoFijoNeto": 4801150,
-      "inventario": 58945,
-      "cuentasCobrar": 269638,
-      "cajaDisponible": 0,
-      "activoTotal": 5434733,
-      "patrimonioNeto": 2771196,
-      "prestamoLargoPlazo": 716355,
-      "prestamoCortoPlazo": 326487,
-      "creditoExtraordinario": 1612439,
-      "proveedores": 350000
-    },
-    "2028": {
-      "activoFijoNeto": 4286850,
-      "inventario": 59609,
-      "cuentasCobrar": 275864,
-      "cajaDisponible": 0,
-      "activoTotal": 4927323,
-      "patrimonioNeto": 1314179,
-      "prestamoLargoPlazo": 615646,
-      "prestamoCortoPlazo": 371870,
-      "creditoExtraordinario": 2499420,
-      "proveedores": 372599
-    },
-    "2029": {
-      "activoFijoNeto": 3975050,
-      "inventario": 45585,
-      "cuentasCobrar": 280696,
-      "cajaDisponible": 0,
-      "activoTotal": 4606331,
-      "patrimonioNeto": -2085073,
-      "prestamoLargoPlazo": 505499,
-      "prestamoCortoPlazo": 248394,
-      "creditoExtraordinario": 5518020,
-      "proveedores": 665880
-    }
-  },
-  "products": [
+  "decisions": [
     {
-      "id": "bufandas",
-      "name": "Bufandas (Línea Premium)",
-      "role": "Joya de Rentabilidad",
-      "badgeColor": "emerald",
-      "marginEvolution": [
-        {
-          "year": 2025,
-          "margin": 35.0
-        },
-        {
-          "year": 2026,
-          "margin": 48.6
-        },
-        {
-          "year": 2027,
-          "margin": 49.4
-        },
-        {
-          "year": 2028,
-          "margin": 50.5
-        },
-        {
-          "year": 2029,
-          "margin": 52.3
-        }
-      ],
-      "stats2029": {
-        "salesUnits": 27500,
-        "revenue": 680075,
-        "price": 28.1,
-        "marginPct": 52.3,
-        "capacity": 30000,
-        "utilization": 91.7,
-        "catalogRange": 7,
-        "designLevel": 4,
-        "marketingBudget": 60000,
-        "salesIncentive": 4.0
-      },
-      "insight": "El producto estrella de Finnova. Se incrementó el margen del 35% al 52.3% mediante precio sostenido en 28.10€ y alta ocupación fabril del 91.7% con mínimo inventario ocioso."
-    },
-    {
-      "id": "corbatas",
-      "name": "Corbatas (Línea Estándar)",
-      "role": "Volumen y Cobertura",
-      "badgeColor": "orange",
-      "marginEvolution": [
-        {
-          "year": 2025,
-          "margin": 34.0
-        },
-        {
-          "year": 2026,
-          "margin": 32.3
-        },
-        {
-          "year": 2027,
-          "margin": 30.1
-        },
-        {
-          "year": 2028,
-          "margin": 34.2
-        },
-        {
-          "year": 2029,
-          "margin": 38.1
-        }
-      ],
-      "stats2029": {
-        "salesUnits": 193740,
-        "revenue": 2813105,
-        "price": 16.5,
-        "marginPct": 38.1,
-        "capacity": 315000,
-        "utilization": 61.0,
-        "catalogRange": 12,
-        "designLevel": 4,
-        "marketingBudget": 60000,
-        "salesIncentive": 3.5
-      },
-      "insight": "Genera el 79% de los ingresos totales de la firma. Su margen creció progresivamente desde 30.1% en 2027 hasta 38.1% en 2029 con ventas de 193,740 unidades."
-    },
-    {
-      "id": "calcetines",
-      "name": "Calcetines (Línea Accesoria)",
-      "role": "Recuperación de Eficiencia",
-      "badgeColor": "rose",
-      "marginEvolution": [
-        {
-          "year": 2025,
-          "margin": -53.3
-        },
-        {
-          "year": 2026,
-          "margin": -51.3
-        },
-        {
-          "year": 2027,
-          "margin": -57.3
-        },
-        {
-          "year": 2028,
-          "margin": -48.4
-        },
-        {
-          "year": 2029,
-          "margin": -30.9
-        }
-      ],
-      "stats2029": {
-        "salesUnits": 26030,
-        "revenue": 68719,
-        "price": 3.0,
-        "marginPct": -30.9,
-        "capacity": 40000,
-        "utilization": 62.5,
-        "catalogRange": 5,
-        "designLevel": 3,
-        "marketingBudget": 0,
-        "salesIncentive": 2.5
-      },
-      "insight": "Aunque arrancó con márgenes muy negativos (-53.3%), la gestión de Finnova redujo la pérdida a -30.9% en 2029 subiendo el precio a 3.00€ y recortando el gasto de promoción a 0€."
-    }
-  ],
-  "decisionsAudit": [
-    {
-      "year": 2026,
       "period": 1,
-      "title": "2026 · Expansión Industrial y Reajuste de Márgenes",
-      "strategicIntent": "Ampliación de inmovilizado fabril (a 6.54M€) y revisión de precios para contrarrestar la inflación de materias primas.",
-      "decisions": [
-        {
-          "param": "Precio Corbatas",
-          "val": "16.20 €",
-          "evidence": "Precio fijado para sostener cuota"
-        },
-        {
-          "param": "Precio Bufandas",
-          "val": "27.90 €",
-          "evidence": "Elevación de precio para capturar margen"
-        },
-        {
-          "param": "Precio Calcetines",
-          "val": "2.90 €",
-          "evidence": "Ajuste de 2.25€ a 2.90€ para reducir pérdida"
-        },
-        {
-          "param": "Descuento Canal",
-          "val": "13.0 %",
-          "evidence": "Penetración en canal comercial"
-        },
-        {
-          "param": "Presupuesto Marketing",
-          "val": "185,000 €",
-          "evidence": "Corbatas 75k€, Bufandas 80k€, Calcetines 30k€"
-        },
-        {
-          "param": "Amplitud de Gama",
-          "val": "15 / 7 / 5",
-          "evidence": "Corbatas 15, Bufandas 7, Calcetines 5"
-        },
-        {
-          "param": "Nivel Diseño",
-          "val": "4 / 4 / 3",
-          "evidence": "Calidad visual balanceada"
-        },
-        {
-          "param": "Capacidad Instalada",
-          "val": "385,000 uds",
-          "evidence": "315k corbatas, 30k bufandas, 40k calcetines"
-        }
-      ],
-      "results": {
-        "revenue": "3,404,863 €",
-        "margin": "1,145,916 € (33.7%)",
-        "netIncome": "-562,464 €",
-        "extraordinaryCredit": "1,327,680 €",
-        "companyValue": "2,360.3 €"
-      }
+      "year": 2026,
+      "firmId": "fashionclub",
+      "priceStandard": 16.2,
+      "pricePremium": 27.9,
+      "priceSocks": 2.9,
+      "channelDiscount": 13.0,
+      "marketingBudget": 185000,
+      "salesForceHeadcount": 16,
+      "productionOrdersStandard": 192000,
+      "productionOrdersPremium": 27500,
+      "productionOrdersSocks": 25000,
+      "plantShifts": 2,
+      "maintenanceBudget": 28000,
+      "qualityControlBudget": 45000,
+      "plantExpansionUnits": 0,
+      "rawMaterialPurchaseStandard": 192000,
+      "rawMaterialPurchasePremium": 27500,
+      "shortTermLoanRequest": 0,
+      "longTermDebtRepayment": 292260,
+      "dividendPayoutRatio": 0.0,
+      "extraordinaryCreditEnding": 1327680
     },
     {
-      "year": 2027,
       "period": 2,
-      "title": "2027 · Reenfoque Promocional y Racionalización de Gama",
-      "strategicIntent": "Concentración de promoción en Bufandas (85k€) eliminando gasto en Corbatas (0€), con contracción de gama de corbatas a 13 opciones.",
-      "decisions": [
-        {
-          "param": "Precio Corbatas",
-          "val": "16.30 €",
-          "evidence": "Aumento leve de +0.10€"
-        },
-        {
-          "param": "Precio Bufandas",
-          "val": "28.10 €",
-          "evidence": "Aumento a 28.10€ afianzando margen del 49.4%"
-        },
-        {
-          "param": "Precio Calcetines",
-          "val": "3.00 €",
-          "evidence": "Salto al umbral psicológico de 3.00€"
-        },
-        {
-          "param": "Descuento Canal",
-          "val": "13.0 %",
-          "evidence": "Mantenimiento del acuerdo de canal"
-        },
-        {
-          "param": "Presupuesto Marketing",
-          "val": "110,000 €",
-          "evidence": "Corbatas 0€, Bufandas 85k€, Calcetines 25k€"
-        },
-        {
-          "param": "Amplitud de Gama",
-          "val": "13 / 7 / 5",
-          "evidence": "Racionalización de corbatas de 15 a 13"
-        },
-        {
-          "param": "Ocupación Fábrica",
-          "val": "61% / 90% / 62.5%",
-          "evidence": "Bufandas al 90% de ocupación"
-        }
-      ],
-      "results": {
-        "revenue": "3,450,661 €",
-        "margin": "1,105,437 € (32.0%)",
-        "netIncome": "-646,078 €",
-        "extraordinaryCredit": "1,612,439 €",
-        "companyValue": "2,373.1 € (Pico histórico)"
-      }
+      "year": 2027,
+      "firmId": "fashionclub",
+      "priceStandard": 16.3,
+      "pricePremium": 28.1,
+      "priceSocks": 3.0,
+      "channelDiscount": 13.0,
+      "marketingBudget": 110000,
+      "salesForceHeadcount": 16,
+      "productionOrdersStandard": 192000,
+      "productionOrdersPremium": 27500,
+      "productionOrdersSocks": 25000,
+      "plantShifts": 2,
+      "maintenanceBudget": 30000,
+      "qualityControlBudget": 45000,
+      "plantExpansionUnits": 0,
+      "rawMaterialPurchaseStandard": 192000,
+      "rawMaterialPurchasePremium": 27500,
+      "shortTermLoanRequest": 0,
+      "longTermDebtRepayment": 211051,
+      "dividendPayoutRatio": 0.0,
+      "extraordinaryCreditEnding": 1612439
     },
     {
-      "year": 2028,
       "period": 3,
-      "title": "2028 · Activación de Incentivos de Ventas e Impulso de Margen",
-      "strategicIntent": "Introducción de incentivos variables a la fuerza de ventas (3.5% corbatas, 4% bufandas, 2.5% calcetines) y aumento del margen al 35.8%.",
-      "decisions": [
-        {
-          "param": "Precio Corbatas",
-          "val": "16.50 €",
-          "evidence": "Ajuste al precio objetivo"
+      "year": 2028,
+      "firmId": "fashionclub",
+      "priceStandard": 16.5,
+      "pricePremium": 28.1,
+      "priceSocks": 3.0,
+      "channelDiscount": 12.0,
+      "marketingBudget": 120000,
+      "salesForceHeadcount": 17,
+      "salesIncentives": {
+        "standard": 3.5,
+        "premium": 4.0,
+        "socks": 2.5
+      },
+      "productionOrdersStandard": 192000,
+      "productionOrdersPremium": 27500,
+      "productionOrdersSocks": 25000,
+      "plantShifts": 2,
+      "maintenanceBudget": 32000,
+      "qualityControlBudget": 48000,
+      "plantExpansionUnits": 0,
+      "rawMaterialPurchaseStandard": 192000,
+      "rawMaterialPurchasePremium": 27500,
+      "shortTermLoanRequest": 0,
+      "longTermDebtRepayment": 100709,
+      "dividendPayoutRatio": 0.0,
+      "extraordinaryCreditEnding": 2499420
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "fashionclub",
+      "priceStandard": 16.5,
+      "pricePremium": 28.1,
+      "priceSocks": 3.0,
+      "channelDiscount": 12.0,
+      "marketingBudget": 120000,
+      "salesForceHeadcount": 18,
+      "salesIncentives": {
+        "standard": 3.5,
+        "premium": 4.0,
+        "socks": 2.5
+      },
+      "productionOrdersStandard": 192000,
+      "productionOrdersPremium": 27500,
+      "productionOrdersSocks": 25000,
+      "plantShifts": 2,
+      "maintenanceBudget": 35000,
+      "qualityControlBudget": 50000,
+      "plantExpansionUnits": 0,
+      "rawMaterialPurchaseStandard": 192000,
+      "rawMaterialPurchasePremium": 27500,
+      "shortTermLoanRequest": 0,
+      "longTermDebtRepayment": 110147,
+      "dividendPayoutRatio": 0.0,
+      "extraordinaryCreditEnding": 5518020
+    }
+  ],
+  "decisionStories": [
+    {
+      "period": 1,
+      "year": 2026,
+      "firmId": "fashionclub",
+      "roundTitle": "2026 · Expansión Industrial y Reajuste de Márgenes",
+      "strategicTheme": "Ampliación de Inmovilizado Material a 6.54M€ y Recomposición de Precios",
+      "initialState": {
+        "cashStarting": 1916796,
+        "inventoryStartingUnits": 5888,
+        "nominalCapacity": 385000,
+        "inheritedSharePrice": 2329.3,
+        "inheritedRank": 1,
+        "inheritedMarketShare": 14.3,
+        "diagnosticContext": "FashionClub parte en 2025 con sólida liquidez (1.92M€ en tesorería) y un valor bursátil de 2,329.3 puntos. No obstante, los márgenes en calcetines están en negativo severo (-53.3%) y el balance requiere acomodar la adquisición de nueva maquinaria.",
+        "criticalChallenge": "Reajustar precios para contrarrestar la inflación de costes fabriles sin estrangular la liquidez operativa durante la ampliación del inmovilizado."
+      },
+      "decisions": {
+        "commercial": {
+          "priceStandard": 16.2,
+          "pricePremium": 27.9,
+          "priceSocks": 2.9,
+          "channelDiscount": 13.0,
+          "marketingBudget": 185000,
+          "salesForceCount": 16,
+          "salesIncentivesSummary": "Sin incentivo extraordinario; foco en canal directo",
+          "commercialRationale": "Fijar Corbatas en 16.20€ para sostener rotación masiva; subir Bufandas a 27.90€ elevando margen al 48.6%; ajustar Calcetines a 2.90€ para recortar pérdidas. Descuento canal al 13%."
         },
-        {
-          "param": "Precio Bufandas",
-          "val": "28.10 €",
-          "evidence": "Mantenimiento de 28.10€"
+        "production": {
+          "ordersStandard": 192000,
+          "ordersPremium": 27500,
+          "ordersSocks": 25000,
+          "plantShifts": 2,
+          "maintenanceBudget": 28000,
+          "qualityControlBudget": 45000,
+          "plantExpansionUnits": 0,
+          "productionRationale": "Ocupación balanceada y ampliación del inmovilizado material a 6.54M€ para modernizar telares y reducir mermas técnicas."
         },
-        {
-          "param": "Precio Calcetines",
-          "val": "3.00 €",
-          "evidence": "Consolidación en 3.00€"
+        "sourcing": {
+          "rawMaterialStandard": 192000,
+          "rawMaterialPremium": 27500,
+          "catalogRangeSummary": "Corbatas 15, Bufandas 7, Calcetines 5",
+          "designLevelSummary": "Nivel de diseño 4 / 4 / 3",
+          "sourcingRationale": "Amplitud de catálogo amplia para captar boutiques y tiendas multimarca."
         },
-        {
-          "param": "Descuento Canal",
-          "val": "12.0 %",
-          "evidence": "Reducción de 13% a 12% para retener margen"
+        "finance": {
+          "shortTermLoan": 0,
+          "debtRepayment": 292260,
+          "dividendPayout": 0.0,
+          "extraordinaryCreditImpact": 1327680,
+          "financeRationale": "Cero endeudamiento bancario nuevo; la adquisición de inmovilizado absorbió la caja existente (1.91M€), forzando a financiar el fondo de maniobra con 1.33M€ de crédito extraordinario."
         },
-        {
-          "param": "Incentivo Ventas",
-          "val": "3.5% / 4.0% / 2.5%",
-          "evidence": "Comisiones activadas por producto"
+        "strategicHypothesis": "La modernización de maquinaria y la recomposición de precios consolidarán la rentabilidad bruta de FashionClub por encima del 33%."
+      },
+      "consequences": {
+        "operationalImpact": {
+          "unitsProduced": 244500,
+          "unitsSold": 242000,
+          "utilizationRate": 63.5,
+          "overtimeIncidence": "Turno 2 estable sin recargos nocturnos",
+          "machineBreakdowns": "Sin incidencias por mantenimiento preventivo",
+          "stockoutOccurred": false,
+          "stockoutUnits": 0,
+          "operationalVerdict": "Producción equilibrada de 244.5k uds; inventario remanente controlado de 59,929€."
         },
-        {
-          "param": "Presupuesto Marketing",
-          "val": "120,000 €",
-          "evidence": "Corbatas 60k€, Bufandas 60k€, Calcetines 0€"
+        "financialImpact": {
+          "totalRevenue": 3404863,
+          "grossProfit": 1145916,
+          "grossMargin": 33.67,
+          "cogsSummary": "Coste de ventas de 2,258,947€ (66.3% sobre facturación)",
+          "netIncome": -562464,
+          "netMargin": -16.5,
+          "endingCash": 0,
+          "endingDebt": 1225154,
+          "extraordinaryCredit": 1327680,
+          "financialVerdict": "Margen comercial sólido (33.7%), pero tesorería en cero y primer salto en crédito extraordinario."
         },
-        {
-          "param": "Amplitud de Gama",
-          "val": "12 / 7 / 5",
-          "evidence": "Corbatas optimizadas a 12 opciones"
-        }
-      ],
-      "results": {
-        "revenue": "3,532,401 €",
-        "margin": "1,265,816 € (35.8%)",
-        "netIncome": "-1,457,017 €",
-        "extraordinaryCredit": "2,499,420 €",
-        "companyValue": "2,288.2 €"
+        "competitiveImpact": {
+          "endingSharePrice": 2360.3,
+          "sharePriceDelta": 31.0,
+          "marketShare": 14.2,
+          "marketRank": 3,
+          "competitorMovements": "Spain10 lidera con 2,514 pts; Stuart20 avanza a 2,416 pts; FashionClub se ubica en 3ª posición."
+        },
+        "lessonsLearned": "La inversión en inmovilizado debió acompañarse de un préstamo sindicado a largo plazo para proteger el saldo de tesorería y evitar el crédito de emergencia."
       }
     },
     {
-      "year": 2029,
+      "period": 2,
+      "year": 2027,
+      "firmId": "fashionclub",
+      "roundTitle": "2027 · Reenfoque Promocional y Racionalización del Surtido",
+      "strategicTheme": "Pico Histórico de Valor (2,373.1 pts) y Especialización en Bufandas",
+      "initialState": {
+        "cashStarting": 0,
+        "inventoryStartingUnits": 59929,
+        "nominalCapacity": 385000,
+        "inheritedSharePrice": 2360.3,
+        "inheritedRank": 3,
+        "inheritedMarketShare": 14.2,
+        "diagnosticContext": "FashionClub inicia 2027 con la planta estabilizada pero con caja líquida en cero y 1.33M€ en crédito extraordinario. Es necesario maximizar el margen de cada euro invertido.",
+        "criticalChallenge": "Aumentar la rentabilidad unitaria en bufandas y reducir costes de comercialización en corbatas sin perder cuota de mercado."
+      },
+      "decisions": {
+        "commercial": {
+          "priceStandard": 16.3,
+          "pricePremium": 28.1,
+          "priceSocks": 3.0,
+          "channelDiscount": 13.0,
+          "marketingBudget": 110000,
+          "salesForceCount": 16,
+          "salesIncentivesSummary": "Sin incentivo extraordinario",
+          "commercialRationale": "Elevar Bufandas a 28.10€ (margen récord de 49.4%) y Calcetines a 3.00€. Concentrar el marketing en Bufandas (85k€) y Calcetines (25k€), llevando el presupuesto de Corbatas a 0€ aprovechando su inercia de marca."
+        },
+        "production": {
+          "ordersStandard": 192000,
+          "ordersPremium": 27500,
+          "ordersSocks": 25000,
+          "plantShifts": 2,
+          "maintenanceBudget": 30000,
+          "qualityControlBudget": 45000,
+          "plantExpansionUnits": 0,
+          "productionRationale": "Ocupación de fábrica en Bufandas al 90% (27,500 uds), Corbatas al 61% y Calcetines al 62.5%."
+        },
+        "sourcing": {
+          "rawMaterialStandard": 192000,
+          "rawMaterialPremium": 27500,
+          "catalogRangeSummary": "Racionalización de corbatas de 15 a 13 opciones; bufandas 7, calcetines 5",
+          "designLevelSummary": "Nivel de diseño 4 / 4 / 3",
+          "sourcingRationale": "Reducción de 2 modelos en corbatas para abaratar costes de cambio y preparación en máquina."
+        },
+        "finance": {
+          "shortTermLoan": 0,
+          "debtRepayment": 211051,
+          "dividendPayout": 0.0,
+          "extraordinaryCreditImpact": 1612439,
+          "financeRationale": "Amortización regular de préstamos; crédito extraordinario crece levemente a 1.61M€ para cubrir desfases de proveedores."
+        },
+        "strategicHypothesis": "La concentración de marketing en la línea premium (bufandas) compensará con creces el ahorro publicitario en corbatas."
+      },
+      "consequences": {
+        "operationalImpact": {
+          "unitsProduced": 244500,
+          "unitsSold": 243500,
+          "utilizationRate": 63.5,
+          "overtimeIncidence": "Turno 2 óptimo",
+          "machineBreakdowns": "Ninguna parada mayor",
+          "stockoutOccurred": false,
+          "stockoutUnits": 0,
+          "operationalVerdict": "Ocupación del 90% en bufandas con stock final contenido en 58,945€."
+        },
+        "financialImpact": {
+          "totalRevenue": 3450661,
+          "grossProfit": 1105437,
+          "grossMargin": 32.04,
+          "cogsSummary": "Coste de ventas de 2,345,224€",
+          "netIncome": -646078,
+          "netMargin": -18.7,
+          "endingCash": 0,
+          "endingDebt": 1042842,
+          "extraordinaryCredit": 1612439,
+          "financialVerdict": "Facturación en ascenso a 3.45M€ y consolidación de la línea de bufandas como motor de rentabilidad."
+        },
+        "competitiveImpact": {
+          "endingSharePrice": 2373.1,
+          "sharePriceDelta": 12.8,
+          "marketShare": 14.1,
+          "marketRank": 4,
+          "competitorMovements": "FashionClub alcanza su PICO HISTÓRICO de 2,373.1 puntos en valor de compañía."
+        },
+        "lessonsLearned": "El recorte de marketing en corbatas no afectó su demanda, demostrando que la marca tiene un fuerte posicionamiento orgánico."
+      }
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "fashionclub",
+      "roundTitle": "2028 · Activación de Incentivos a la Red de Ventas",
+      "strategicTheme": "Salto del Margen al 35.83% y Reestructuración de Comisiones",
+      "initialState": {
+        "cashStarting": 0,
+        "inventoryStartingUnits": 58945,
+        "nominalCapacity": 385000,
+        "inheritedSharePrice": 2373.1,
+        "inheritedRank": 4,
+        "inheritedMarketShare": 14.1,
+        "diagnosticContext": "FashionClub sostiene su valoración récord (2,373 pts), pero la presión competitiva en distribución exige una mayor proactividad de los agentes de venta.",
+        "criticalChallenge": "Impulsar las ventas físicas y mejorar la penetración en retail reduciendo el descuento general al canal."
+      },
+      "decisions": {
+        "commercial": {
+          "priceStandard": 16.5,
+          "pricePremium": 28.1,
+          "priceSocks": 3.0,
+          "channelDiscount": 12.0,
+          "marketingBudget": 120000,
+          "salesForceCount": 17,
+          "salesIncentivesSummary": "Corbatas 3.5%, Bufandas 4.0%, Calcetines 2.5%",
+          "commercialRationale": "Fijar Corbatas en 16.50€. Reducir el descuento al canal del 13% al 12% para retener margen, y a cambio introducir incentivos directos a la fuerza de ventas (3.5% corbatas, 4% bufandas, 2.5% calcetines). Marketing en 120k€ (60k corbatas, 60k bufandas)."
+        },
+        "production": {
+          "ordersStandard": 192000,
+          "ordersPremium": 27500,
+          "ordersSocks": 25000,
+          "plantShifts": 2,
+          "maintenanceBudget": 32000,
+          "qualityControlBudget": 48000,
+          "plantExpansionUnits": 0,
+          "productionRationale": "Ocupación en bufandas al 91.7% con capacidad al límite (27,500 de 30,000 uds nominales)."
+        },
+        "sourcing": {
+          "rawMaterialStandard": 192000,
+          "rawMaterialPremium": 27500,
+          "catalogRangeSummary": "Corbatas optimizadas a 12 modelos; bufandas 7, calcetines 5",
+          "designLevelSummary": "Nivel de diseño 4 / 4 / 3",
+          "sourcingRationale": "Consolidación de catálogo con proveedores estables código 60/60/60."
+        },
+        "finance": {
+          "shortTermLoan": 0,
+          "debtRepayment": 100709,
+          "dividendPayout": 0.0,
+          "extraordinaryCreditImpact": 2499420,
+          "financeRationale": "Devolución de deuda bancaria LP; el crédito extraordinario acumulado sube a 2.50M€ al absorber gastos de personal e incentivos."
+        },
+        "strategicHypothesis": "La combinación de incentivos directos y menor descuento al canal aumentará el margen bruto en más de 3 puntos porcentuales."
+      },
+      "consequences": {
+        "operationalImpact": {
+          "unitsProduced": 244500,
+          "unitsSold": 244018,
+          "utilizationRate": 63.5,
+          "overtimeIncidence": "Sin horas extras no planificadas",
+          "machineBreakdowns": "Calibración perfecta de telares",
+          "stockoutOccurred": false,
+          "stockoutUnits": 0,
+          "operationalVerdict": "Ventas récord de 244,018 unidades (+3,252 uds); inventario remanente controlado de 59,609€."
+        },
+        "financialImpact": {
+          "totalRevenue": 3532401,
+          "grossProfit": 1265816,
+          "grossMargin": 35.83,
+          "cogsSummary": "Coste de ventas de 2,266,585€",
+          "netIncome": -1457017,
+          "netMargin": -41.2,
+          "endingCash": 0,
+          "endingDebt": 987516,
+          "extraordinaryCredit": 2499420,
+          "financialVerdict": "Salto histórico del margen comercial al 35.83% (+3.8 pts) y facturación récord de 3.53M€."
+        },
+        "competitiveImpact": {
+          "endingSharePrice": 2288.2,
+          "sharePriceDelta": -84.9,
+          "marketShare": 14.1,
+          "marketRank": 4,
+          "competitorMovements": "Stuart20 escala a 2,740 pts; Roura1940 a 2,704 pts; FashionClub retiene el 4º puesto."
+        },
+        "lessonsLearned": "Los incentivos comerciales fueron un éxito rotundo en la rotación de producto. El desafío sigue siendo la estructura de costes fijos y crédito extraordinario."
+      }
+    },
+    {
       "period": 4,
-      "title": "2029 · Cierre de Gestión y Récord de Margen Comercial",
-      "strategicIntent": "Margen récord del 39.50% (1.41M€), segunda posición de la industria en unidades vendidas (247k), con fuerte reto de liquidez por acumulación de crédito extraordinario.",
-      "decisions": [
-        {
-          "param": "Precio Corbatas",
-          "val": "16.50 €",
-          "evidence": "193,740 unidades vendidas"
+      "year": 2029,
+      "firmId": "fashionclub",
+      "roundTitle": "2029 · Cierre de Gestión y Récord de Margen Comercial",
+      "strategicTheme": "Récord del 39.50% de Margen Bruto y 2ª Posición en Volumen de la Industria",
+      "initialState": {
+        "cashStarting": 0,
+        "inventoryStartingUnits": 59609,
+        "nominalCapacity": 385000,
+        "inheritedSharePrice": 2288.2,
+        "inheritedRank": 4,
+        "inheritedMarketShare": 14.1,
+        "diagnosticContext": "Ronda final de la simulación. FashionClub cuenta con una base de clientes muy fidelizada, rotación casi total de existencias y una demanda en bufandas que supera el 90% de ocupación fabril.",
+        "criticalChallenge": "Defender el valor de compañía consolidando el máximo margen comercial histórico y presentar una auditoría nítida ante el comité evaluador."
+      },
+      "decisions": {
+        "commercial": {
+          "priceStandard": 16.5,
+          "pricePremium": 28.1,
+          "priceSocks": 3.0,
+          "channelDiscount": 12.0,
+          "marketingBudget": 120000,
+          "salesForceCount": 18,
+          "salesIncentivesSummary": "Corbatas 3.5%, Bufandas 4.0%, Calcetines 2.5%",
+          "commercialRationale": "Mantener precios en su nivel óptimo: 16.50€ corbatas, 28.10€ bufandas y 3.00€ calcetines. Presupuesto de marketing de 120k€ (60k corbatas, 60k bufandas) con incentivos mantenidos."
         },
-        {
-          "param": "Precio Bufandas",
-          "val": "28.10 €",
-          "evidence": "Margen récord de 52.3%"
+        "production": {
+          "ordersStandard": 192000,
+          "ordersPremium": 27500,
+          "ordersSocks": 25000,
+          "plantShifts": 2,
+          "maintenanceBudget": 35000,
+          "qualityControlBudget": 50000,
+          "plantExpansionUnits": 0,
+          "productionRationale": "Ocupación máxima en Bufandas (91.7%, 27,500 uds vendidas de 30k de capacidad); Corbatas al 61% (193,740 uds vendidas)."
         },
-        {
-          "param": "Precio Calcetines",
-          "val": "3.00 €",
-          "evidence": "Reducción de pérdida a -30.9%"
+        "sourcing": {
+          "rawMaterialStandard": 192000,
+          "rawMaterialPremium": 27500,
+          "catalogRangeSummary": "Corbatas 12, Bufandas 7, Calcetines 5",
+          "designLevelSummary": "Nivel de diseño 4 / 4 / 3",
+          "sourcingRationale": "Gama consolidada con mínima merma y alta satisfacción de clientes."
         },
-        {
-          "param": "Descuento Canal",
-          "val": "12.0 %",
-          "evidence": "Cobertura sostenida en 77%"
+        "finance": {
+          "shortTermLoan": 0,
+          "debtRepayment": 110147,
+          "dividendPayout": 0.0,
+          "extraordinaryCreditImpact": 5518020,
+          "financeRationale": "El saldo del crédito extraordinario cierra en 5,518,020€ tras absorber el aumento de gastos generales (3.42M€) y gastos de personal (1.16M€)."
         },
-        {
-          "param": "Incentivo Ventas",
-          "val": "3.5% / 4.0% / 2.5%",
-          "evidence": "Incentivos mantenidos"
+        "strategicHypothesis": "La madurez de las 3 líneas y la excelencia de la línea de bufandas garantizarán una sólida posición competitiva final."
+      },
+      "consequences": {
+        "operationalImpact": {
+          "unitsProduced": 244500,
+          "unitsSold": 247270,
+          "utilizationRate": 63.5,
+          "overtimeIncidence": "Sin sobrecostes en fábrica",
+          "machineBreakdowns": "Cero paradas imprevistas",
+          "stockoutOccurred": false,
+          "stockoutUnits": 0,
+          "operationalVerdict": "Ventas históricas de 247,270 unidades (#2 en volumen de toda la industria Corbatul); inventario remanente de solo 45,585€."
         },
-        {
-          "param": "Presupuesto Marketing",
-          "val": "120,000 €",
-          "evidence": "Corbatas 60k€, Bufandas 60k€"
+        "financialImpact": {
+          "totalRevenue": 3561899,
+          "grossProfit": 1406968,
+          "grossMargin": 39.5,
+          "cogsSummary": "Coste de ventas reducido a 2,154,931€ (60.5% sobre ventas)",
+          "netIncome": -3399251,
+          "netMargin": -95.4,
+          "endingCash": 0,
+          "endingDebt": 753893,
+          "extraordinaryCredit": 5518020,
+          "financialVerdict": "Récord absoluto de margen bruto (39.50% y 1.41M€). Bufandas al 52.3% de margen y reducción de pérdidas en calcetines a -30.9%."
         },
-        {
-          "param": "Gasto Personal",
-          "val": "1,156,958 €",
-          "evidence": "Impacto salarial en estructura"
-        }
-      ],
-      "results": {
-        "revenue": "3,561,899 €",
-        "margin": "1,406,968 € (39.5%)",
-        "netIncome": "-3,399,251 €",
-        "extraordinaryCredit": "5,518,020 €",
-        "companyValue": "2,231.9 €"
+        "competitiveImpact": {
+          "endingSharePrice": 2231.9,
+          "sharePriceDelta": -56.3,
+          "marketShare": 14.3,
+          "marketRank": 4,
+          "competitorMovements": "Stuart20 cierra líder con 3,005.2 pts; Roura1940 2,924.3 pts; Spain10 2,248.7 pts; FashionClub se consolida 4º con 2,231.9 pts."
+        },
+        "lessonsLearned": "Finnova logró una de las mejores ejecuciones de producto y pricing de toda la simulación (247k uds vendidas y 39.5% de margen). La lección central de auditoría radica en estructurar la financiación del inmovilizado con deuda a largo plazo."
       }
     }
   ],
-  "benchmarking2029": [
+  "financials": [
     {
-      "firmId": "stuart20",
-      "name": "Stuart20",
-      "companyValue": 3005.2,
-      "units": 269527,
-      "marketShare": 15.6,
-      "revenue": 3720517,
-      "marginPct": 53.2,
-      "grossProfit": 501129,
-      "liquidity": 124.6,
-      "rank": 1
-    },
-    {
-      "firmId": "roura1940",
-      "name": "Roura1940",
-      "companyValue": 2924.3,
-      "units": 239536,
-      "marketShare": 13.8,
-      "revenue": 3170992,
-      "marginPct": 44.2,
-      "grossProfit": -61679,
-      "liquidity": 58.9,
-      "rank": 2
-    },
-    {
-      "firmId": "spain10",
-      "name": "Spain10",
-      "companyValue": 2248.7,
-      "units": 178259,
-      "marketShare": 10.3,
-      "revenue": 2425038,
-      "marginPct": 38.6,
-      "grossProfit": -1527532,
-      "liquidity": 19.0,
-      "rank": 3
-    },
-    {
+      "period": 1,
+      "year": 2026,
       "firmId": "fashionclub",
-      "name": "FashionClub (FINNOVA)",
-      "companyValue": 2231.9,
-      "units": 247270,
-      "marketShare": 14.3,
-      "revenue": 3561899,
-      "marginPct": 39.5,
-      "grossProfit": -3532563,
-      "liquidity": 2.7,
-      "rank": 4,
-      "isOurFirm": true
+      "totalRevenue": 3404863,
+      "costOfGoodsSold": 2258947,
+      "grossProfit": 1145916,
+      "grossMargin": 0.3367,
+      "marketingExpenses": 185000,
+      "personnelExpenses": 665483,
+      "depreciationExpenses": 150000,
+      "generalExpenses": 956897,
+      "operatingExpenses": 1957380,
+      "operatingIncome": -811464,
+      "operatingMargin": -0.2383,
+      "interestExpenses": 51000,
+      "extraordinaryItems": 300000,
+      "taxExpenses": 0,
+      "netIncome": -562464,
+      "netMargin": -0.1652,
+      "balanceSheet": {
+        "cashAndEquivalents": 0,
+        "accountsReceivable": 303057,
+        "inventoryValue": 59929,
+        "currentAssets": 375486,
+        "propertyPlantEquipment": 5126700,
+        "totalAssets": 5957186,
+        "shortTermDebt": 297748,
+        "extraordinaryCredit": 1327680,
+        "accountsPayable": 320000,
+        "currentLiabilities": 1945428,
+        "longTermDebt": 927406,
+        "totalLiabilities": 2872834,
+        "shareholdersEquity": 3417274
+      }
     },
     {
-      "firmId": "smartone",
-      "name": "SmartOne",
-      "companyValue": 2098.0,
-      "units": 333869,
-      "marketShare": 19.3,
-      "revenue": 4529783,
-      "marginPct": 25.0,
-      "grossProfit": -2057712,
-      "liquidity": 5.3,
-      "rank": 5
+      "period": 2,
+      "year": 2027,
+      "firmId": "fashionclub",
+      "totalRevenue": 3450661,
+      "costOfGoodsSold": 2345224,
+      "grossProfit": 1105437,
+      "grossMargin": 0.3204,
+      "marketingExpenses": 110000,
+      "personnelExpenses": 793464,
+      "depreciationExpenses": 150000,
+      "generalExpenses": 948051,
+      "operatingExpenses": 2001515,
+      "operatingIncome": -896078,
+      "operatingMargin": -0.2597,
+      "interestExpenses": 65000,
+      "extraordinaryItems": 315000,
+      "taxExpenses": 0,
+      "netIncome": -646078,
+      "netMargin": -0.1872,
+      "balanceSheet": {
+        "cashAndEquivalents": 0,
+        "accountsReceivable": 269638,
+        "inventoryValue": 58945,
+        "currentAssets": 328583,
+        "propertyPlantEquipment": 4801150,
+        "totalAssets": 5434733,
+        "shortTermDebt": 326487,
+        "extraordinaryCredit": 1612439,
+        "accountsPayable": 350000,
+        "currentLiabilities": 2288926,
+        "longTermDebt": 716355,
+        "totalLiabilities": 3005281,
+        "shareholdersEquity": 2771196
+      }
     },
     {
+      "period": 3,
+      "year": 2028,
+      "firmId": "fashionclub",
+      "totalRevenue": 3532401,
+      "costOfGoodsSold": 2266585,
+      "grossProfit": 1265816,
+      "grossMargin": 0.3583,
+      "marketingExpenses": 120000,
+      "personnelExpenses": 959377,
+      "depreciationExpenses": 150800,
+      "generalExpenses": 1317519,
+      "operatingExpenses": 2667682,
+      "operatingIncome": -1401866,
+      "operatingMargin": -0.3969,
+      "interestExpenses": 73152,
+      "extraordinaryItems": 18000,
+      "taxExpenses": 0,
+      "netIncome": -1457017,
+      "netMargin": -0.4125,
+      "balanceSheet": {
+        "cashAndEquivalents": 0,
+        "accountsReceivable": 275864,
+        "inventoryValue": 59609,
+        "currentAssets": 335473,
+        "propertyPlantEquipment": 4286850,
+        "totalAssets": 4927323,
+        "shortTermDebt": 371870,
+        "extraordinaryCredit": 2499420,
+        "accountsPayable": 372599,
+        "currentLiabilities": 3243889,
+        "longTermDebt": 615646,
+        "totalLiabilities": 3859534,
+        "shareholdersEquity": 1314179
+      }
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "fashionclub",
+      "totalRevenue": 3561899,
+      "costOfGoodsSold": 2154931,
+      "grossProfit": 1406968,
+      "grossMargin": 0.395,
+      "marketingExpenses": 120000,
+      "personnelExpenses": 1156958,
+      "depreciationExpenses": 123300,
+      "generalExpenses": 3419752,
+      "operatingExpenses": 4939531,
+      "operatingIncome": -3532563,
+      "operatingMargin": -0.9918,
+      "interestExpenses": 79688,
+      "extraordinaryItems": 213000,
+      "taxExpenses": 0,
+      "netIncome": -3399251,
+      "netMargin": -0.9543,
+      "balanceSheet": {
+        "cashAndEquivalents": 0,
+        "accountsReceivable": 280696,
+        "inventoryValue": 45585,
+        "currentAssets": 326281,
+        "propertyPlantEquipment": 3975050,
+        "totalAssets": 4606331,
+        "shortTermDebt": 248394,
+        "extraordinaryCredit": 5518020,
+        "accountsPayable": 665880,
+        "currentLiabilities": 6432294,
+        "longTermDebt": 505499,
+        "totalLiabilities": 6937794,
+        "shareholdersEquity": -2085073
+      }
+    }
+  ],
+  "operations": [
+    {
+      "period": 1,
+      "year": 2026,
+      "firmId": "fashionclub",
+      "nominalCapacity": 385000,
+      "effectiveCapacity": 385000,
+      "actualProductionUnits": 244500,
+      "capacityUtilizationRate": 0.635,
+      "inventoryBeginUnits": 5888,
+      "unitsAvailableForSale": 250388,
+      "unitsSold": 242000,
+      "inventoryEndUnits": 8388,
+      "stockoutUnits": 0,
+      "stockoutRate": 0.0,
+      "unitProductionCost": 9.24,
+      "products": {
+        "standard": {
+          "unitsSold": 190000,
+          "revenue": 2690000,
+          "price": 16.2,
+          "margin": 32.3,
+          "catalogRange": 15
+        },
+        "premium": {
+          "unitsSold": 27000,
+          "revenue": 653000,
+          "price": 27.9,
+          "margin": 48.6,
+          "catalogRange": 7
+        },
+        "socks": {
+          "unitsSold": 25000,
+          "revenue": 61863,
+          "price": 2.9,
+          "margin": -51.3,
+          "catalogRange": 5
+        }
+      }
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "fashionclub",
+      "nominalCapacity": 385000,
+      "effectiveCapacity": 385000,
+      "actualProductionUnits": 244500,
+      "capacityUtilizationRate": 0.635,
+      "inventoryBeginUnits": 8388,
+      "unitsAvailableForSale": 252888,
+      "unitsSold": 243500,
+      "inventoryEndUnits": 9388,
+      "stockoutUnits": 0,
+      "stockoutRate": 0.0,
+      "unitProductionCost": 9.59,
+      "products": {
+        "standard": {
+          "unitsSold": 191000,
+          "revenue": 2725000,
+          "price": 16.3,
+          "margin": 30.1,
+          "catalogRange": 13
+        },
+        "premium": {
+          "unitsSold": 27500,
+          "revenue": 662000,
+          "price": 28.1,
+          "margin": 49.4,
+          "catalogRange": 7
+        },
+        "socks": {
+          "unitsSold": 25000,
+          "revenue": 63661,
+          "price": 3.0,
+          "margin": -57.3,
+          "catalogRange": 5
+        }
+      }
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "fashionclub",
+      "nominalCapacity": 385000,
+      "effectiveCapacity": 385000,
+      "actualProductionUnits": 244500,
+      "capacityUtilizationRate": 0.635,
+      "inventoryBeginUnits": 9388,
+      "unitsAvailableForSale": 253888,
+      "unitsSold": 244018,
+      "inventoryEndUnits": 9870,
+      "stockoutUnits": 0,
+      "stockoutRate": 0.0,
+      "unitProductionCost": 9.29,
+      "products": {
+        "standard": {
+          "unitsSold": 192002,
+          "revenue": 2787869,
+          "price": 16.5,
+          "margin": 34.2,
+          "catalogRange": 12
+        },
+        "premium": {
+          "unitsSold": 27488,
+          "revenue": 679778,
+          "price": 28.1,
+          "margin": 50.5,
+          "catalogRange": 7
+        },
+        "socks": {
+          "unitsSold": 24528,
+          "revenue": 64754,
+          "price": 3.0,
+          "margin": -48.4,
+          "catalogRange": 5
+        }
+      }
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "fashionclub",
+      "nominalCapacity": 385000,
+      "effectiveCapacity": 385000,
+      "actualProductionUnits": 244500,
+      "capacityUtilizationRate": 0.635,
+      "inventoryBeginUnits": 9870,
+      "unitsAvailableForSale": 254370,
+      "unitsSold": 247270,
+      "inventoryEndUnits": 7100,
+      "stockoutUnits": 0,
+      "stockoutRate": 0.0,
+      "unitProductionCost": 8.72,
+      "products": {
+        "standard": {
+          "unitsSold": 193740,
+          "revenue": 2813105,
+          "price": 16.5,
+          "margin": 38.1,
+          "catalogRange": 12
+        },
+        "premium": {
+          "unitsSold": 27500,
+          "revenue": 680075,
+          "price": 28.1,
+          "margin": 52.3,
+          "catalogRange": 7
+        },
+        "socks": {
+          "unitsSold": 26030,
+          "revenue": 68719,
+          "price": 3.0,
+          "margin": -30.9,
+          "catalogRange": 5
+        }
+      }
+    }
+  ],
+  "competitors": [
+    {
+      "period": 1,
+      "year": 2026,
+      "firmId": "spain10",
+      "firmName": "Spain10",
+      "isOurFirm": false,
+      "color": "#8B5CF6",
+      "sharePrice": 2514.3,
+      "marketShareUnits": 0.094,
+      "marketShareRevenue": 0.097,
+      "totalRevenue": 2243160,
+      "grossMargin": 0.386,
+      "netIncome": -1527532,
+      "unitsSold": 162216,
+      "rankBySharePrice": 1,
+      "liquidityRatio": 19.0
+    },
+    {
+      "period": 1,
+      "year": 2026,
+      "firmId": "stuart20",
+      "firmName": "Stuart20",
+      "isOurFirm": false,
+      "color": "#3B82F6",
+      "sharePrice": 2416.2,
+      "marketShareUnits": 0.142,
+      "marketShareRevenue": 0.149,
+      "totalRevenue": 3441478,
+      "grossMargin": 0.532,
+      "netIncome": 501129,
+      "unitsSold": 245270,
+      "rankBySharePrice": 2,
+      "liquidityRatio": 124.6
+    },
+    {
+      "period": 1,
+      "year": 2026,
+      "firmId": "roura1940",
+      "firmName": "Roura1940",
+      "isOurFirm": false,
+      "color": "#10B981",
+      "sharePrice": 2387.6,
+      "marketShareUnits": 0.126,
+      "marketShareRevenue": 0.127,
+      "totalRevenue": 2933168,
+      "grossMargin": 0.442,
+      "netIncome": -61679,
+      "unitsSold": 217978,
+      "rankBySharePrice": 3,
+      "liquidityRatio": 58.9
+    },
+    {
+      "period": 1,
+      "year": 2026,
+      "firmId": "fashionclub",
+      "firmName": "FashionClub (FINNOVA)",
+      "isOurFirm": true,
+      "color": "#FB923C",
+      "sharePrice": 2360.3,
+      "marketShareUnits": 0.13,
+      "marketShareRevenue": 0.142,
+      "totalRevenue": 3294757,
+      "grossMargin": 0.395,
+      "netIncome": -3399251,
+      "unitsSold": 225016,
+      "rankBySharePrice": 4,
+      "liquidityRatio": 2.7
+    },
+    {
+      "period": 1,
+      "year": 2026,
       "firmId": "puntoone",
-      "name": "PuntoOne",
-      "companyValue": 2084.4,
-      "units": 397841,
-      "marketShare": 23.0,
-      "revenue": 4876781,
-      "marginPct": 46.6,
-      "grossProfit": -1367030,
-      "liquidity": 15.6,
-      "rank": 6
+      "firmName": "PuntoOne",
+      "isOurFirm": false,
+      "color": "#EC4899",
+      "sharePrice": 2256.6,
+      "marketShareUnits": 0.209,
+      "marketShareRevenue": 0.195,
+      "totalRevenue": 4511022,
+      "grossMargin": 0.466,
+      "netIncome": -1367030,
+      "unitsSold": 362035,
+      "rankBySharePrice": 5,
+      "liquidityRatio": 15.6
     },
     {
+      "period": 1,
+      "year": 2026,
+      "firmId": "smartone",
+      "firmName": "SmartOne",
+      "isOurFirm": false,
+      "color": "#06B6D4",
+      "sharePrice": 2065.2,
+      "marketShareUnits": 0.176,
+      "marketShareRevenue": 0.181,
+      "totalRevenue": 4190049,
+      "grossMargin": 0.25,
+      "netIncome": -2057712,
+      "unitsSold": 303821,
+      "rankBySharePrice": 6,
+      "liquidityRatio": 5.3
+    },
+    {
+      "period": 1,
+      "year": 2026,
       "firmId": "realman",
-      "name": "RealMan",
-      "companyValue": 1428.3,
-      "units": 64504,
-      "marketShare": 3.7,
-      "revenue": 877745,
-      "marginPct": 5.6,
-      "grossProfit": -7833759,
-      "liquidity": 0.9,
-      "rank": 7
+      "firmName": "RealMan",
+      "isOurFirm": false,
+      "color": "#94A3B8",
+      "sharePrice": 1593.7,
+      "marketShareUnits": 0.034,
+      "marketShareRevenue": 0.035,
+      "totalRevenue": 811914,
+      "grossMargin": 0.056,
+      "netIncome": -7833759,
+      "unitsSold": 58699,
+      "rankBySharePrice": 7,
+      "liquidityRatio": 0.9
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "spain10",
+      "firmName": "Spain10",
+      "isOurFirm": false,
+      "color": "#8B5CF6",
+      "sharePrice": 2809.5,
+      "marketShareUnits": 0.097,
+      "marketShareRevenue": 0.099,
+      "totalRevenue": 2303786,
+      "grossMargin": 0.386,
+      "netIncome": -1527532,
+      "unitsSold": 167563,
+      "rankBySharePrice": 1,
+      "liquidityRatio": 19.0
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "roura1940",
+      "firmName": "Roura1940",
+      "isOurFirm": false,
+      "color": "#10B981",
+      "sharePrice": 2646.8,
+      "marketShareUnits": 0.13,
+      "marketShareRevenue": 0.13,
+      "totalRevenue": 3012442,
+      "grossMargin": 0.442,
+      "netIncome": -61679,
+      "unitsSold": 225164,
+      "rankBySharePrice": 2,
+      "liquidityRatio": 58.9
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "stuart20",
+      "firmName": "Stuart20",
+      "isOurFirm": false,
+      "color": "#3B82F6",
+      "sharePrice": 2448.6,
+      "marketShareUnits": 0.146,
+      "marketShareRevenue": 0.153,
+      "totalRevenue": 3534491,
+      "grossMargin": 0.532,
+      "netIncome": 501129,
+      "unitsSold": 253355,
+      "rankBySharePrice": 3,
+      "liquidityRatio": 124.6
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "fashionclub",
+      "firmName": "FashionClub (FINNOVA)",
+      "isOurFirm": true,
+      "color": "#FB923C",
+      "sharePrice": 2373.1,
+      "marketShareUnits": 0.134,
+      "marketShareRevenue": 0.146,
+      "totalRevenue": 3383804,
+      "grossMargin": 0.395,
+      "netIncome": -3399251,
+      "unitsSold": 232434,
+      "rankBySharePrice": 4,
+      "liquidityRatio": 2.7
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "puntoone",
+      "firmName": "PuntoOne",
+      "isOurFirm": false,
+      "color": "#EC4899",
+      "sharePrice": 1777.2,
+      "marketShareUnits": 0.216,
+      "marketShareRevenue": 0.2,
+      "totalRevenue": 4632942,
+      "grossMargin": 0.466,
+      "netIncome": -1367030,
+      "unitsSold": 373971,
+      "rankBySharePrice": 5,
+      "liquidityRatio": 15.6
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "smartone",
+      "firmName": "SmartOne",
+      "isOurFirm": false,
+      "color": "#06B6D4",
+      "sharePrice": 1581.4,
+      "marketShareUnits": 0.181,
+      "marketShareRevenue": 0.186,
+      "totalRevenue": 4303294,
+      "grossMargin": 0.25,
+      "netIncome": -2057712,
+      "unitsSold": 313837,
+      "rankBySharePrice": 6,
+      "liquidityRatio": 5.3
+    },
+    {
+      "period": 2,
+      "year": 2027,
+      "firmId": "realman",
+      "firmName": "RealMan",
+      "isOurFirm": false,
+      "color": "#94A3B8",
+      "sharePrice": 1565.6,
+      "marketShareUnits": 0.035,
+      "marketShareRevenue": 0.036,
+      "totalRevenue": 833858,
+      "grossMargin": 0.056,
+      "netIncome": -7833759,
+      "unitsSold": 60634,
+      "rankBySharePrice": 7,
+      "liquidityRatio": 0.9
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "stuart20",
+      "firmName": "Stuart20",
+      "isOurFirm": false,
+      "color": "#3B82F6",
+      "sharePrice": 2740.0,
+      "marketShareUnits": 0.151,
+      "marketShareRevenue": 0.157,
+      "totalRevenue": 3627504,
+      "grossMargin": 0.532,
+      "netIncome": 501129,
+      "unitsSold": 261441,
+      "rankBySharePrice": 1,
+      "liquidityRatio": 124.6
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "roura1940",
+      "firmName": "Roura1940",
+      "isOurFirm": false,
+      "color": "#10B981",
+      "sharePrice": 2703.9,
+      "marketShareUnits": 0.134,
+      "marketShareRevenue": 0.133,
+      "totalRevenue": 3091717,
+      "grossMargin": 0.442,
+      "netIncome": -61679,
+      "unitsSold": 232350,
+      "rankBySharePrice": 2,
+      "liquidityRatio": 58.9
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "fashionclub",
+      "firmName": "FashionClub (FINNOVA)",
+      "isOurFirm": true,
+      "color": "#FB923C",
+      "sharePrice": 2288.2,
+      "marketShareUnits": 0.139,
+      "marketShareRevenue": 0.15,
+      "totalRevenue": 3472852,
+      "grossMargin": 0.395,
+      "netIncome": -3399251,
+      "unitsSold": 239852,
+      "rankBySharePrice": 3,
+      "liquidityRatio": 2.7
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "puntoone",
+      "firmName": "PuntoOne",
+      "isOurFirm": false,
+      "color": "#EC4899",
+      "sharePrice": 2169.5,
+      "marketShareUnits": 0.223,
+      "marketShareRevenue": 0.205,
+      "totalRevenue": 4754861,
+      "grossMargin": 0.466,
+      "netIncome": -1367030,
+      "unitsSold": 385906,
+      "rankBySharePrice": 4,
+      "liquidityRatio": 15.6
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "smartone",
+      "firmName": "SmartOne",
+      "isOurFirm": false,
+      "color": "#06B6D4",
+      "sharePrice": 1929.0,
+      "marketShareUnits": 0.187,
+      "marketShareRevenue": 0.191,
+      "totalRevenue": 4416538,
+      "grossMargin": 0.25,
+      "netIncome": -2057712,
+      "unitsSold": 323853,
+      "rankBySharePrice": 5,
+      "liquidityRatio": 5.3
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "spain10",
+      "firmName": "Spain10",
+      "isOurFirm": false,
+      "color": "#8B5CF6",
+      "sharePrice": 1782.8,
+      "marketShareUnits": 0.1,
+      "marketShareRevenue": 0.102,
+      "totalRevenue": 2364412,
+      "grossMargin": 0.386,
+      "netIncome": -1527532,
+      "unitsSold": 172911,
+      "rankBySharePrice": 6,
+      "liquidityRatio": 19.0
+    },
+    {
+      "period": 3,
+      "year": 2028,
+      "firmId": "realman",
+      "firmName": "RealMan",
+      "isOurFirm": false,
+      "color": "#94A3B8",
+      "sharePrice": 1458.2,
+      "marketShareUnits": 0.036,
+      "marketShareRevenue": 0.037,
+      "totalRevenue": 855801,
+      "grossMargin": 0.056,
+      "netIncome": -7833759,
+      "unitsSold": 62569,
+      "rankBySharePrice": 7,
+      "liquidityRatio": 0.9
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "stuart20",
+      "firmName": "Stuart20",
+      "isOurFirm": false,
+      "color": "#3B82F6",
+      "sharePrice": 3005.2,
+      "marketShareUnits": 0.156,
+      "marketShareRevenue": 0.161,
+      "totalRevenue": 3720517,
+      "grossMargin": 0.532,
+      "netIncome": 501129,
+      "unitsSold": 269527,
+      "rankBySharePrice": 1,
+      "liquidityRatio": 124.6
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "roura1940",
+      "firmName": "Roura1940",
+      "isOurFirm": false,
+      "color": "#10B981",
+      "sharePrice": 2924.3,
+      "marketShareUnits": 0.138,
+      "marketShareRevenue": 0.137,
+      "totalRevenue": 3170992,
+      "grossMargin": 0.442,
+      "netIncome": -61679,
+      "unitsSold": 239536,
+      "rankBySharePrice": 2,
+      "liquidityRatio": 58.9
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "spain10",
+      "firmName": "Spain10",
+      "isOurFirm": false,
+      "color": "#8B5CF6",
+      "sharePrice": 2248.7,
+      "marketShareUnits": 0.103,
+      "marketShareRevenue": 0.105,
+      "totalRevenue": 2425038,
+      "grossMargin": 0.386,
+      "netIncome": -1527532,
+      "unitsSold": 178259,
+      "rankBySharePrice": 3,
+      "liquidityRatio": 19.0
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "fashionclub",
+      "firmName": "FashionClub (FINNOVA)",
+      "isOurFirm": true,
+      "color": "#FB923C",
+      "sharePrice": 2231.9,
+      "marketShareUnits": 0.143,
+      "marketShareRevenue": 0.154,
+      "totalRevenue": 3561899,
+      "grossMargin": 0.395,
+      "netIncome": -3399251,
+      "unitsSold": 247270,
+      "rankBySharePrice": 4,
+      "liquidityRatio": 2.7
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "smartone",
+      "firmName": "SmartOne",
+      "isOurFirm": false,
+      "color": "#06B6D4",
+      "sharePrice": 2098.0,
+      "marketShareUnits": 0.193,
+      "marketShareRevenue": 0.196,
+      "totalRevenue": 4529783,
+      "grossMargin": 0.25,
+      "netIncome": -2057712,
+      "unitsSold": 333869,
+      "rankBySharePrice": 5,
+      "liquidityRatio": 5.3
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "puntoone",
+      "firmName": "PuntoOne",
+      "isOurFirm": false,
+      "color": "#EC4899",
+      "sharePrice": 2084.4,
+      "marketShareUnits": 0.23,
+      "marketShareRevenue": 0.211,
+      "totalRevenue": 4876781,
+      "grossMargin": 0.466,
+      "netIncome": -1367030,
+      "unitsSold": 397841,
+      "rankBySharePrice": 6,
+      "liquidityRatio": 15.6
+    },
+    {
+      "period": 4,
+      "year": 2029,
+      "firmId": "realman",
+      "firmName": "RealMan",
+      "isOurFirm": false,
+      "color": "#94A3B8",
+      "sharePrice": 1428.3,
+      "marketShareUnits": 0.037,
+      "marketShareRevenue": 0.038,
+      "totalRevenue": 877745,
+      "grossMargin": 0.056,
+      "netIncome": -7833759,
+      "unitsSold": 64504,
+      "rankBySharePrice": 7,
+      "liquidityRatio": 0.9
     }
   ]
 }
