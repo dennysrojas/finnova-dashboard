@@ -334,7 +334,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                 </div>
               </div>
 
-              {/* Botón Central de Simulación Cinemática */}
+              {/* Botón Único de Ejecución de Simulación */}
               <div className="pt-4 border-t border-pastel-200">
                 <button
                   onClick={handleRunSimulation}
@@ -350,17 +350,17 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                   {isSimulating ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin shrink-0" />
-                      <span>Procesando Algoritmo Corbatul (Paso {simStep}/4)...</span>
+                      <span>Procesando Simulación ({simStep}/4)...</span>
                     </>
                   ) : isExecuted ? (
                     <>
                       <RotateCcw className="w-4 h-4" />
-                      <span>Re-ejecutar Simulación Cinemática</span>
+                      <span>Volver a Ejecutar Simulación</span>
                     </>
                   ) : (
                     <>
                       <Play className="w-4 h-4 fill-white" />
-                      <span>Ejecutar Algoritmo de Simulación Causal</span>
+                      <span>Ejecutar Simulación ({currentStory.year})</span>
                     </>
                   )}
                 </button>
@@ -415,7 +415,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                           Resultados e Impacto en Espera
                         </h3>
                         <p className="text-xs text-obsidian-600 mt-2 leading-relaxed">
-                          Las decisiones estratégicas en los 4 ejes ya están formuladas para el <strong>Ejercicio {currentStory.year}</strong>. Haz clic en <strong>&ldquo;Ejecutar Algoritmo de Simulación Causal&rdquo;</strong> para procesar las órdenes fabriles, simular la absorción de mercado frente a las 6 firmas y liquidar el P&L, el crédito y el valor de compañía.
+                          Las decisiones estratégicas en los 4 ejes ya están formuladas para el <strong>Ejercicio {currentStory.year}</strong>. Haz clic en <strong>&ldquo;Ejecutar Simulación&rdquo;</strong> en el panel izquierdo para procesar las órdenes fabriles, simular la absorción de mercado y calcular los resultados financieros y el valor de compañía.
                         </p>
                       </div>
 
@@ -441,20 +441,8 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-pastel-200/80 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <button
-                      onClick={handleRunSimulation}
-                      className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-pastel-500 to-pastel-600 text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-sunset hover:opacity-95 transition-all cursor-pointer"
-                    >
-                      <Play className="w-4 h-4 fill-white" />
-                      <span>Ejecutar Simulación Ahora ({currentStory.year})</span>
-                    </button>
-                    <button
-                      onClick={() => setIsExecuted(true)}
-                      className="text-xs text-obsidian-500 hover:text-pastel-700 font-semibold underline underline-offset-4 cursor-pointer"
-                    >
-                      Ver resultados directamente sin animación →
-                    </button>
+                  <div className="pt-4 border-t border-pastel-200/80 text-center text-xs text-obsidian-500 font-medium">
+                    Pulsa <strong className="text-pastel-700 font-bold">&ldquo;Ejecutar Simulación ({currentStory.year})&rdquo;</strong> en el panel de decisiones para procesar los resultados.
                   </div>
                 </div>
               )}
@@ -509,14 +497,14 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                          ✓ Simulación Ejecutada
+                          ✓ Resultados Auditados
                         </span>
                         <button
                           onClick={() => setIsExecuted(false)}
                           className="text-[11px] text-obsidian-400 hover:text-obsidian-700 font-semibold cursor-pointer"
                           title="Volver a estado inicial"
                         >
-                          Ocultar
+                          Reiniciar
                         </button>
                       </div>
                     </div>
