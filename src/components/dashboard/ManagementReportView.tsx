@@ -53,17 +53,17 @@ export const ManagementReportView: React.FC = () => {
   const [isEditingMission, setIsEditingMission] = useState<boolean>(false);
   const [draftMission, setDraftMission] = useState<string>(DEFAULT_MISSION);
 
-  // 3. Internacionalización (Diapositiva 12)
+  // 3. Internacionalización
   const [intlText, setIntlText] = useState<string>(DEFAULT_INTERNATIONALIZATION);
   const [isEditingIntl, setIsEditingIntl] = useState<boolean>(false);
   const [draftIntl, setDraftIntl] = useState<string>(DEFAULT_INTERNATIONALIZATION);
 
-  // 4. Metodología de gestión (Diapositiva 13)
+  // 4. Metodología de gestión
   const [methodologyText, setMethodologyText] = useState<string>(DEFAULT_METHODOLOGY);
   const [isEditingMethodology, setIsEditingMethodology] = useState<boolean>(false);
   const [draftMethodology, setDraftMethodology] = useState<string>(DEFAULT_METHODOLOGY);
 
-  // 5. Trabajo en equipo (Diapositiva 14)
+  // 5. Trabajo en equipo
   const [teamworkIdeas, setTeamworkIdeas] = useState<[string, string, string]>([
     DEFAULT_TEAMWORK_IDEA_1,
     DEFAULT_TEAMWORK_IDEA_2,
@@ -79,7 +79,7 @@ export const ManagementReportView: React.FC = () => {
   const [isEditingTeamworkRating, setIsEditingTeamworkRating] = useState<boolean>(false);
   const [draftTeamworkRating, setDraftTeamworkRating] = useState<number>(4);
 
-  // 6. Evaluación global (Diapositiva 16)
+  // 6. Evaluación global
   const [evaluationText, setEvaluationText] = useState<string>(DEFAULT_GLOBAL_EVALUATION);
   const [isEditingEvaluation, setIsEditingEvaluation] = useState<boolean>(false);
   const [draftEvaluation, setDraftEvaluation] = useState<string>(DEFAULT_GLOBAL_EVALUATION);
@@ -292,14 +292,14 @@ export const ManagementReportView: React.FC = () => {
                 Torneo Internacional de Simulación de Negocios
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-obsidian-100 text-obsidian-700">
-                Plantilla Oficial · INFORMEGESTION_8.pptx
+                Simulación Corbatul · FashionClub
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-obsidian-950 tracking-tight">
               Informe de Gestión Directiva · Equipo FINNOVA
             </h1>
             <p className="text-xs sm:text-sm text-obsidian-600 max-w-3xl leading-relaxed">
-              Compañía <strong>FashionClub</strong> &bull; Presentación oficial de resultados, plan de actuación, gobernanza de equipo, internacionalización y balance de la simulación.
+              Compañía <strong>FashionClub</strong> &bull; Presentación de resultados, plan de actuación, gobernanza de equipo, internacionalización y balance de la simulación.
             </p>
           </div>
 
@@ -324,20 +324,20 @@ export const ManagementReportView: React.FC = () => {
       </section>
 
       {/* ========================================================
-          1. DIAPOSITIVA 4: PRESENTACIÓN DEL EQUIPO & FOTOGRAFÍA REAL
+          1. PRESENTACIÓN DEL EQUIPO & FOTOGRAFÍA REAL
          ======================================================== */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/70 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-xl bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
-              04
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-pastel-100 text-pastel-700 flex items-center justify-center shadow-xs">
+              <Users className="w-5 h-5" />
+            </div>
             <div>
               <h2 className="text-lg font-extrabold text-obsidian-950">
                 Presentación del Equipo Directivo
               </h2>
               <p className="text-xs text-obsidian-500">
-                Plantilla Oficial · Diapositiva 4
+                Equipo FINNOVA · FashionClub
               </p>
             </div>
           </div>
@@ -490,20 +490,20 @@ export const ManagementReportView: React.FC = () => {
       </section>
 
       {/* ========================================================
-          2. DIAPOSITIVA 6: PLAN DE ACTUACIÓN & MISIÓN DE LA EMPRESA
+          2. PLAN DE ACTUACIÓN & MISIÓN DE LA EMPRESA
          ======================================================== */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/70 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-xl bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
-              06
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-pastel-100 text-pastel-700 flex items-center justify-center shadow-xs">
+              <Compass className="w-5 h-5" />
+            </div>
             <div>
               <h2 className="text-lg font-extrabold text-obsidian-950">
                 Plan de Actuación · Misión de la Empresa
               </h2>
               <p className="text-xs text-obsidian-500">
-                Plantilla Oficial · Diapositiva 6
+                Directrices Estratégicas y Propuesta de Valor
               </p>
             </div>
           </div>
@@ -569,20 +569,20 @@ export const ManagementReportView: React.FC = () => {
       </section>
 
       {/* ========================================================
-          3. DIAPOSITIVA 12: INTERNACIONALIZACIÓN
+          3. INTERNACIONALIZACIÓN
          ======================================================== */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/70 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-xl bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
-              12
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-pastel-100 text-pastel-700 flex items-center justify-center shadow-xs">
+              <Globe className="w-5 h-5" />
+            </div>
             <div>
               <h2 className="text-lg font-extrabold text-obsidian-950">
                 Internacionalización
               </h2>
               <p className="text-xs text-obsidian-500">
-                Plantilla Oficial · Diapositiva 12
+                Alcance Operativo y Expansión de Mercado
               </p>
             </div>
           </div>
@@ -653,20 +653,20 @@ export const ManagementReportView: React.FC = () => {
       </section>
 
       {/* ========================================================
-          4. DIAPOSITIVA 13: METODOLOGÍA DE GESTIÓN
+          4. METODOLOGÍA DE GESTIÓN
          ======================================================== */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/70 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-xl bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
-              13
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-pastel-100 text-pastel-700 flex items-center justify-center shadow-xs">
+              <FileText className="w-5 h-5" />
+            </div>
             <div>
               <h2 className="text-lg font-extrabold text-obsidian-950">
                 Metodología de Gestión
               </h2>
               <p className="text-xs text-obsidian-500">
-                Plantilla Oficial · Diapositiva 13
+                Diagnóstico FODA, Planificación y Seguimiento
               </p>
             </div>
           </div>
@@ -756,20 +756,20 @@ export const ManagementReportView: React.FC = () => {
       </section>
 
       {/* ========================================================
-          5. DIAPOSITIVA 14: TRABAJO EN EQUIPO
+          5. TRABAJO EN EQUIPO
          ======================================================== */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/70 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-xl bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
-              14
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-pastel-100 text-pastel-700 flex items-center justify-center shadow-xs">
+              <UserCheck className="w-5 h-5" />
+            </div>
             <div>
               <h2 className="text-lg font-extrabold text-obsidian-950">
                 Trabajo en Equipo
               </h2>
               <p className="text-xs text-obsidian-500">
-                Plantilla Oficial · Diapositiva 14
+                Coordinación, Análisis Conjunto y Aprendizaje
               </p>
             </div>
           </div>
@@ -965,20 +965,20 @@ export const ManagementReportView: React.FC = () => {
       </section>
 
       {/* ========================================================
-          6. DIAPOSITIVA 16: EVALUACIÓN GLOBAL
+          6. EVALUACIÓN GLOBAL
          ======================================================== */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/70 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-7 h-7 rounded-xl bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
-              16
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-pastel-100 text-pastel-700 flex items-center justify-center shadow-xs">
+              <Award className="w-5 h-5" />
+            </div>
             <div>
               <h2 className="text-lg font-extrabold text-obsidian-950">
                 Evaluación Global
               </h2>
               <p className="text-xs text-obsidian-500">
-                Plantilla Oficial · Diapositiva 16
+                Balance Estratégico y Calificación de la Experiencia
               </p>
             </div>
           </div>

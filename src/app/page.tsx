@@ -59,7 +59,7 @@ export default function FinnovaDashboardPage() {
     },
     report: {
       icon: <Award className="w-5 h-5 text-pastel-600" />,
-      title: 'Informe de Gestión — Plantilla Oficial del Torneo',
+      title: 'Informe de Gestión Directiva',
       subtitle: 'Presentación Directiva, Internacionalización, Metodología, Trabajo en Equipo & Evaluación',
     },
   };

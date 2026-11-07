@@ -73,7 +73,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     {
       id: 'report',
       label: 'Informe de Gestión',
-      sublabel: 'Plantilla Oficial (Slides 4, 12–16)',
+      sublabel: 'Equipo, Metodología & Balance',
       icon: <Award className="w-4 h-4" />,
     },
   ];
