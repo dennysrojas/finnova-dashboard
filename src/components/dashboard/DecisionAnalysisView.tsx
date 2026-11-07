@@ -386,25 +386,170 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
             </div>
 
             {/* PANEL DERECHO (50%): CONSECUENCIAS REALES E IMPACTO */}
-            <div className="lg:col-span-6 bg-white border border-pastel-200/90 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4">
-              <div>
-                <div className="flex items-center justify-between border-b border-pastel-200/80 pb-3 mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-black shadow-xs">
-                      03
-                    </span>
-                    <span className="text-xs font-extrabold text-obsidian-950 uppercase tracking-wider">
-                      Resultados e Impacto Causal ({currentStory.year})
-                    </span>
-                  </div>
-                  <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
-                    isExecuted ? 'bg-emerald-100 text-emerald-800' : 'bg-pastel-100 text-pastel-700'
-                  }`}>
-                    {isExecuted ? 'Ejecutado' : 'Listo para auditar'}
-                  </span>
-                </div>
+            <div className="lg:col-span-6 flex flex-col justify-between">
+              
+              {/* 1. ESTADO PRE-SIMULACIÓN (CUANDO AÚN NO SE HA EJECUTADO) */}
+              {!isExecuted && !isSimulating && (
+                <div className="bg-gradient-to-br from-pastel-50/70 via-white to-white border-2 border-dashed border-pastel-300 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between min-h-[580px] space-y-6 animate-fadeIn">
+                  <div>
+                    <div className="flex items-center justify-between border-b border-pastel-200/80 pb-3 mb-5">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-pastel-400 text-white flex items-center justify-center text-xs font-black shadow-xs">
+                          03
+                        </span>
+                        <span className="text-xs font-extrabold text-obsidian-950 uppercase tracking-wider">
+                          Resultados e Impacto Causal ({currentStory.year})
+                        </span>
+                      </div>
+                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+                        Pendiente de Ejecución
+                      </span>
+                    </div>
 
-                {/* Sub-tabs for Consequences */}
+                    <div className="text-center py-6 space-y-4 max-w-md mx-auto">
+                      <div className="w-16 h-16 rounded-3xl bg-pastel-100 border border-pastel-200 mx-auto flex items-center justify-center text-pastel-600 shadow-sunset">
+                        <Compass className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-black text-obsidian-950">
+                          Resultados e Impacto en Espera
+                        </h3>
+                        <p className="text-xs text-obsidian-600 mt-2 leading-relaxed">
+                          Las decisiones estratégicas en los 4 ejes ya están formuladas para el <strong>Ejercicio {currentStory.year}</strong>. Haz clic en <strong>&ldquo;Ejecutar Algoritmo de Simulación Causal&rdquo;</strong> para procesar las órdenes fabriles, simular la absorción de mercado frente a las 6 firmas y liquidar el P&L, el crédito y el valor de compañía.
+                        </p>
+                      </div>
+
+                      {/* 4 Steps preview cards */}
+                      <div className="grid grid-cols-2 gap-2 text-left pt-3">
+                        <div className="bg-white p-3 rounded-2xl border border-pastel-200/80 shadow-xs">
+                          <span className="text-[10px] font-bold uppercase text-pastel-700 block font-semibold">Paso 1: Parámetros</span>
+                          <span className="text-xs font-bold text-obsidian-900">Precios & Comercial</span>
+                        </div>
+                        <div className="bg-white p-3 rounded-2xl border border-pastel-200/80 shadow-xs">
+                          <span className="text-[10px] font-bold uppercase text-pastel-700 block font-semibold">Paso 2: Absorción</span>
+                          <span className="text-xs font-bold text-obsidian-900">Demanda 7 Firmas</span>
+                        </div>
+                        <div className="bg-white p-3 rounded-2xl border border-pastel-200/80 shadow-xs">
+                          <span className="text-[10px] font-bold uppercase text-pastel-700 block font-semibold">Paso 3: Fábrica & P&L</span>
+                          <span className="text-xs font-bold text-obsidian-900">Costes y Márgenes</span>
+                        </div>
+                        <div className="bg-white p-3 rounded-2xl border border-pastel-200/80 shadow-xs">
+                          <span className="text-[10px] font-bold uppercase text-pastel-700 block font-semibold">Paso 4: Valoración</span>
+                          <span className="text-xs font-bold text-obsidian-900">7 Pilares Corbatul</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-pastel-200/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <button
+                      onClick={handleRunSimulation}
+                      className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-pastel-500 to-pastel-600 text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-sunset hover:opacity-95 transition-all cursor-pointer"
+                    >
+                      <Play className="w-4 h-4 fill-white" />
+                      <span>Ejecutar Simulación Ahora ({currentStory.year})</span>
+                    </button>
+                    <button
+                      onClick={() => setIsExecuted(true)}
+                      className="text-xs text-obsidian-500 hover:text-pastel-700 font-semibold underline underline-offset-4 cursor-pointer"
+                    >
+                      Ver resultados directamente sin animación →
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* 2. ESTADO EN SIMULACIÓN */}
+              {isSimulating && (
+                <div className="bg-white border-2 border-pastel-400 rounded-3xl p-8 shadow-sm flex flex-col items-center justify-center min-h-[580px] text-center space-y-6 animate-fadeIn">
+                  <div className="relative">
+                    <div className="w-20 h-20 rounded-full border-4 border-pastel-200 border-t-pastel-600 animate-spin" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-mono text-sm font-black text-pastel-700">{simStep}/4</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 max-w-sm">
+                    <h3 className="text-base font-black text-obsidian-950">
+                      Procesando Algoritmo Causal Corbatul
+                    </h3>
+                    <p className="text-xs text-obsidian-600 leading-relaxed font-mono">
+                      {simStep === 1 && "Paso 1/4: Validando parámetros de precios, canal y catálogo..."}
+                      {simStep === 2 && "Paso 2/4: Simulando absorción de mercado frente a las 6 firmas competidoras..."}
+                      {simStep === 3 && "Paso 3/4: Computando ocupación industrial, costes COGS y P&L..."}
+                      {simStep === 4 && "Paso 4/4: Actualizando algoritmo de valoración y los 7 componentes oficiales..."}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {[1, 2, 3, 4].map((step) => (
+                      <div
+                        key={step}
+                        className={`w-3 h-3 rounded-full transition-all ${
+                          simStep >= step ? 'bg-pastel-500 scale-110 shadow-sunset' : 'bg-pastel-200'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 3. ESTADO EJECUTADO: RESULTADOS COMPLETOS */}
+              {isExecuted && (
+                <div className="bg-white border border-pastel-200/90 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 animate-fadeIn">
+                  <div>
+                    <div className="flex items-center justify-between border-b border-pastel-200/80 pb-3 mb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-black shadow-xs">
+                          03
+                        </span>
+                        <span className="text-xs font-extrabold text-obsidian-950 uppercase tracking-wider">
+                          Resultados e Impacto Causal ({currentStory.year})
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                          ✓ Simulación Ejecutada
+                        </span>
+                        <button
+                          onClick={() => setIsExecuted(false)}
+                          className="text-[11px] text-obsidian-400 hover:text-obsidian-700 font-semibold cursor-pointer"
+                          title="Volver a estado inicial"
+                        >
+                          Ocultar
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Ribbon de Métricas Clave de la Simulación */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4 p-3 bg-pastel-50/70 rounded-2xl border border-pastel-200/80">
+                      <div>
+                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Valor Acción</span>
+                        <span className="text-base font-black text-obsidian-950 font-mono">
+                          {currentStory.consequences.competitiveImpact.endingSharePrice.toFixed(1)} <span className="text-[10px] text-obsidian-400 font-normal">pts</span>
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Ventas</span>
+                        <span className="text-base font-black text-obsidian-950 font-mono">
+                          {currentStory.consequences.operationalImpact.unitsSold.toLocaleString('es-ES')} <span className="text-[10px] text-obsidian-400 font-normal">uds</span>
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Margen Bruto</span>
+                        <span className="text-base font-black text-emerald-700 font-mono">
+                          {(currentStory.consequences.financialImpact.grossMargin * 100).toFixed(1)}%
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Facturación</span>
+                        <span className="text-base font-black text-obsidian-950 font-mono">
+                          {formatCurrency(currentStory.consequences.financialImpact.totalRevenue)}
+                        </span>
+                      </div>
+                    </div>
+
+{/* Sub-tabs for Consequences */}
                 <div className="grid grid-cols-4 gap-1 bg-pastel-100/70 p-1 rounded-2xl mb-4 text-xs font-bold">
                   <button
                     onClick={() => setActiveImpactTab('operations')}
@@ -596,10 +741,13 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
               </div>
 
             </div>
+          )}
 
-          </div>
-        </>
-      ) : (
+        </div>
+
+      </div>
+    </>
+  ) : (
         /* ========================================================
             MODO MATRIZ COMPARATIVA DE 4 AÑOS (2026 - 2029)
            ======================================================== */
