@@ -13,8 +13,14 @@ import {
   Factory,
   Landmark,
   BarChart3,
-  ShoppingBag
+  ShoppingBag,
+  Edit3,
+  Save,
+  Target
 } from 'lucide-react';
+
+const DEFAULT_MISSION =
+  'FashionClub tiene como misión ofrecer accesorios textiles de calidad, como corbatas, bufandas y calcetines, mediante diseños diferenciados, buenos materiales y acabados cuidadosos. Busca aprovechar su trayectoria en la moda masculina para satisfacer las preferencias de sus clientes, fortalecer su competitividad y generar valor mediante una gestión eficiente.';
 
 interface DecisionAnalysisViewProps {
   dataset: SimulationDataset;
@@ -34,6 +40,29 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
   const [simStep, setSimStep] = useState<number>(0);
   const [isExecuted, setIsExecuted] = useState<boolean>(false);
   const [activeImpactTab, setActiveImpactTab] = useState<ImpactTab>('operations');
+
+  // Misión de la empresa (Plan de Actuación - Requisito 1)
+  const [missionText, setMissionText] = useState<string>(DEFAULT_MISSION);
+  const [isEditingMission, setIsEditingMission] = useState<boolean>(false);
+  const [draftMission, setDraftMission] = useState<string>(DEFAULT_MISSION);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('finnova_company_mission');
+      if (saved) {
+        setMissionText(saved);
+        setDraftMission(saved);
+      }
+    } catch {}
+  }, []);
+
+  const handleSaveMission = () => {
+    setMissionText(draftMission);
+    setIsEditingMission(false);
+    try {
+      localStorage.setItem('finnova_company_mission', draftMission);
+    } catch {}
+  };
 
   useEffect(() => {
     setIsSimulating(false);
@@ -214,6 +243,87 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                   {currentStory.initialState.criticalChallenge}
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* ========================================================
+              PLAN DE ACTUACIÓN: MISIÓN DE LA EMPRESA (REQUISITO 1)
+             ======================================================== */}
+          <div className="bg-white border border-pastel-200/90 rounded-3xl p-6 shadow-sm space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-pastel-200/60 pb-3">
+              <div className="flex items-center gap-2 text-xs font-extrabold text-pastel-800 uppercase tracking-wider">
+                <span className="w-6 h-6 rounded-lg bg-pastel-500 text-white flex items-center justify-center text-xs font-black shadow-xs">
+                  PA
+                </span>
+                <span>Plan de Actuación · Directrices Estratégicas FashionClub</span>
+              </div>
+              <div className="flex items-center gap-2">
+                {isEditingMission ? (
+                  <>
+                    <button
+                      onClick={handleSaveMission}
+                      className="px-3 py-1 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-colors shadow-xs flex items-center gap-1 cursor-pointer"
+                    >
+                      <Save className="w-3.5 h-3.5" />
+                      <span>Guardar</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setDraftMission(missionText);
+                        setIsEditingMission(false);
+                      }}
+                      className="px-2.5 py-1 rounded-xl border border-pastel-300 text-obsidian-600 text-xs font-semibold hover:bg-pastel-100 transition-colors"
+                    >
+                      Cancelar
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setDraftMission(missionText);
+                      setIsEditingMission(true);
+                    }}
+                    className="px-2.5 py-1 rounded-xl border border-pastel-200 text-pastel-700 text-xs font-bold hover:bg-pastel-50 transition-colors flex items-center gap-1 cursor-pointer"
+                  >
+                    <Edit3 className="w-3.5 h-3.5" />
+                    <span>Editar Misión</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Campo independiente denominado «Misión de la empresa» */}
+            <div className="bg-gradient-to-r from-pastel-50/80 via-white to-white rounded-2xl p-4 sm:p-5 border border-pastel-200/80 space-y-2">
+              <div className="flex items-center gap-2">
+                <Target className="w-4 h-4 text-pastel-600" />
+                <h4 className="text-xs font-black text-obsidian-950 uppercase tracking-wider">
+                  Misión de la empresa
+                </h4>
+              </div>
+
+              {isEditingMission ? (
+                <div className="space-y-2 pt-1">
+                  <textarea
+                    value={draftMission}
+                    onChange={(e) => setDraftMission(e.target.value)}
+                    rows={4}
+                    className="w-full text-xs sm:text-sm text-obsidian-900 bg-white border border-pastel-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-pastel-500 font-sans leading-relaxed resize-y"
+                  />
+                  <div className="flex items-center justify-between text-[11px] text-obsidian-400">
+                    <span>Guardado persistente para la plataforma e informe final.</span>
+                    <button
+                      onClick={() => setDraftMission(DEFAULT_MISSION)}
+                      className="text-pastel-600 hover:underline"
+                    >
+                      Restablecer texto original
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <blockquote className="text-xs sm:text-sm text-obsidian-900 font-serif italic leading-relaxed border-l-4 border-pastel-500 pl-4 py-1">
+                  «{missionText}»
+                </blockquote>
+              )}
             </div>
           </div>
 

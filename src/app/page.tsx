@@ -9,6 +9,7 @@ import { ExecutiveSummaryView } from '../components/dashboard/ExecutiveSummaryVi
 import { PnLDetailView } from '../components/dashboard/PnLDetailView';
 import { OperationsInventoryView } from '../components/dashboard/OperationsInventoryView';
 import { CompetitorBenchmarkingView } from '../components/dashboard/CompetitorBenchmarkingView';
+import { ManagementReportView } from '../components/dashboard/ManagementReportView';
 import { 
   Award, 
   Compass, 
@@ -55,6 +56,11 @@ export default function FinnovaDashboardPage() {
       icon: <Target className="w-5 h-5 text-pastel-600" />,
       title: 'Radar de Mercado y Competidores',
       subtitle: 'Benchmarking Multidimensional de la Industria (Las 7 Firmas Textiles)',
+    },
+    report: {
+      icon: <Award className="w-5 h-5 text-pastel-600" />,
+      title: 'Informe de Gestión — Plantilla Oficial del Torneo',
+      subtitle: 'Presentación Directiva, Internacionalización, Metodología, Trabajo en Equipo & Evaluación',
     },
   };
 
@@ -118,6 +124,21 @@ export default function FinnovaDashboardPage() {
               <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
               <span>{currentMargin}% mg</span>
             </div>
+
+            <button
+              onClick={() => {
+                if (activeTab !== 'report') {
+                  setActiveTab('report');
+                } else {
+                  window.print();
+                }
+              }}
+              className="px-3.5 py-1.5 text-xs font-extrabold rounded-xl bg-pastel-500 text-white hover:bg-pastel-600 transition-all shadow-sunset flex items-center gap-1.5 cursor-pointer"
+              title="Abrir o Imprimir Informe de Gestión"
+            >
+              <span>🖨️</span>
+              <span className="hidden sm:inline">Informe Oficial</span>
+            </button>
           </div>
         </header>
 
@@ -157,6 +178,10 @@ export default function FinnovaDashboardPage() {
               dataset={dataset}
               selectedPeriod={selectedPeriod}
             />
+          )}
+
+          {activeTab === 'report' && (
+            <ManagementReportView />
           )}
         </main>
 

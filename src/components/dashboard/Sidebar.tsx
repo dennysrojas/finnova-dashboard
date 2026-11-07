@@ -16,7 +16,7 @@ import {
   TrendingUp
 } from 'lucide-react';
 
-export type DashboardTab = 'decisions' | 'board' | 'pnl' | 'operations' | 'benchmark';
+export type DashboardTab = 'decisions' | 'board' | 'pnl' | 'operations' | 'benchmark' | 'report';
 
 interface SidebarProps {
   dataset: SimulationDataset;
@@ -69,6 +69,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Radar de Mercado',
       sublabel: 'Comparativa de las 7 Firmas',
       icon: <Target className="w-4 h-4" />,
+    },
+    {
+      id: 'report',
+      label: 'Informe de Gestión',
+      sublabel: 'Plantilla Oficial (Slides 4, 12–16)',
+      icon: <Award className="w-4 h-4" />,
     },
   ];
 
