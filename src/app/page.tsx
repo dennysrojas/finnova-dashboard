@@ -27,6 +27,9 @@ export default function FinnovaDashboardPage() {
   const [activeTab, setActiveTab] = useState<DashboardTab>('decisions');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
 
+  const currentFin = dataset.financials.find(f => f.period === selectedPeriod && f.firmId === dataset.meta.primaryFirmId);
+  const currentMargin = currentFin ? (currentFin.grossMargin * 100).toFixed(1) : '33.7';
+
   const tabTitles: Record<DashboardTab, { title: string; subtitle: string; icon: React.ReactNode }> = {
     decisions: {
       icon: <Compass className="w-5 h-5 text-pastel-600" />,
@@ -113,7 +116,7 @@ export default function FinnovaDashboardPage() {
 
             <div className="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-xl text-xs font-mono font-bold">
               <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-              <span>39.5% mg</span>
+              <span>{currentMargin}% mg</span>
             </div>
           </div>
         </header>

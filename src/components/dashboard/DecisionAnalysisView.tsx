@@ -5,25 +5,15 @@ import { SimulationDataset, RoundDecisionStory } from '../../types/corbatul';
 import { 
   Play, 
   RotateCcw, 
-  ArrowRight, 
   Compass, 
   Layers, 
   TrendingUp, 
-  CheckCircle2, 
   AlertTriangle,
   Lightbulb,
-  Zap,
-  Sliders,
-  DollarSign,
   Factory,
   Landmark,
-  ShieldAlert,
-  Calendar,
-  Sparkles,
   BarChart3,
-  ChevronRight,
-  ShoppingBag,
-  Percent
+  ShoppingBag
 } from 'lucide-react';
 
 interface DecisionAnalysisViewProps {
@@ -56,7 +46,6 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
   );
 
   const formatCurrency = (val: number) => `${Math.round(val).toLocaleString('es-ES')} €`;
-  const formatPercent = (val: number) => `${val.toFixed(1)}%`;
 
   if (!currentStory) return null;
 
@@ -158,7 +147,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
               </span>
             </div>
 
-            {/* Quick Metrics Bar */}
+            {/* Quick Metrics Bar con separación estricta de unidades (Correcciones 19, 28, 36, 42) */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
               <div className="bg-white p-3.5 rounded-2xl border border-pastel-200/80 shadow-xs">
                 <span className="text-[10px] font-bold uppercase text-obsidian-400 block tracking-wider">Tesorería Inicial</span>
@@ -170,14 +159,15 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
               <div className="bg-white p-3.5 rounded-2xl border border-pastel-200/80 shadow-xs">
                 <span className="text-[10px] font-bold uppercase text-obsidian-400 block tracking-wider">Inventario Bodega</span>
                 <span className="text-base font-black text-obsidian-900 font-mono">
-                  {currentStory.initialState.inventoryStartingUnits.toLocaleString()} uds
+                  {formatCurrency(currentStory.initialState.inventoryStartingValue)}
                 </span>
+                <span className="text-[9px] text-obsidian-400 block font-normal">(valor contable)</span>
               </div>
 
               <div className="bg-white p-3.5 rounded-2xl border border-pastel-200/80 shadow-xs">
                 <span className="text-[10px] font-bold uppercase text-obsidian-400 block tracking-wider">Capacidad Fabril</span>
                 <span className="text-base font-black text-obsidian-900 font-mono">
-                  {currentStory.initialState.nominalCapacity.toLocaleString()} uds
+                  {currentStory.initialState.nominalCapacity.toLocaleString('es-ES')} uds
                 </span>
               </div>
 
@@ -245,7 +235,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                     </span>
                   </div>
                   <span className="text-[11px] font-bold text-pastel-700 bg-pastel-100 px-2 py-0.5 rounded-full border border-pastel-200">
-                    Auditadas
+                    Auditadas {currentStory.year}
                   </span>
                 </div>
 
@@ -258,7 +248,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                         <ShoppingBag className="w-4 h-4 text-pastel-600" />
                         1. Eje Comercial & Precios
                       </span>
-                      <span className="font-mono text-pastel-700">Dcto Canal: {currentStory.decisions.commercial.channelDiscount || 12}%</span>
+                      <span className="font-mono text-pastel-700">Dcto Canal: {currentStory.decisions.commercial.channelDiscount}%</span>
                     </div>
                     <div className="grid grid-cols-3 gap-2 text-center py-1">
                       <div className="bg-white p-2 rounded-xl border border-pastel-100">
@@ -271,12 +261,12 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                       </div>
                       <div className="bg-white p-2 rounded-xl border border-pastel-100">
                         <span className="text-[10px] text-obsidian-400 block font-semibold">Calcetines</span>
-                        <span className="font-mono font-bold text-obsidian-900">{(currentStory.decisions.commercial.priceSocks || 3).toFixed(2)} €</span>
+                        <span className="font-mono font-bold text-obsidian-900">{currentStory.decisions.commercial.priceSocks.toFixed(2)} €</span>
                       </div>
                     </div>
                     <div className="flex justify-between text-[11px] text-obsidian-600 pt-1">
                       <span>Mkt: <strong>{formatCurrency(currentStory.decisions.commercial.marketingBudget)}</strong></span>
-                      <span>Incentivos: <strong>{currentStory.decisions.commercial.salesIncentivesSummary || 'Activos'}</strong></span>
+                      <span>Incentivos: <strong>{currentStory.decisions.commercial.salesIncentivesSummary || 'No consta'}</strong></span>
                     </div>
                     <p className="text-[11px] text-obsidian-500 italic pt-1 border-t border-pastel-100/60">
                       &ldquo;{currentStory.decisions.commercial.commercialRationale}&rdquo;
@@ -303,7 +293,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                       </div>
                       <div className="bg-white p-2 rounded-xl border border-pastel-100">
                         <span className="text-[10px] text-obsidian-400 block font-semibold">Calcetines</span>
-                        <span className="font-mono font-bold text-obsidian-900">{((currentStory.decisions.production.ordersSocks || 25000) / 1000).toFixed(0)}k uds</span>
+                        <span className="font-mono font-bold text-obsidian-900">{(currentStory.decisions.production.ordersSocks / 1000).toFixed(0)}k uds</span>
                       </div>
                     </div>
                     <p className="text-[11px] text-obsidian-500 italic pt-1 border-t border-pastel-100/60">
@@ -316,7 +306,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                     <div className="flex items-center justify-between font-extrabold text-obsidian-900 text-xs">
                       <span className="flex items-center gap-1.5">
                         <Layers className="w-4 h-4 text-pastel-600" />
-                        3. Eje Gama & Diseño
+                        3. Eje Gama & Surtido
                       </span>
                       <span className="font-mono text-obsidian-600">{currentStory.decisions.sourcing.catalogRangeSummary || '12/7/5'}</span>
                     </div>
@@ -404,7 +394,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                       03
                     </span>
                     <span className="text-xs font-extrabold text-obsidian-950 uppercase tracking-wider">
-                      Resultados e Impacto Causal
+                      Resultados e Impacto Causal ({currentStory.year})
                     </span>
                   </div>
                   <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
@@ -463,12 +453,12 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                   <div className="space-y-3 animate-fadeIn text-xs">
                     <div className="grid grid-cols-2 gap-2.5">
                       <div className="bg-pastel-50/60 p-3.5 rounded-2xl border border-pastel-100">
-                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Ventas Reales</span>
+                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Ventas Reales Totales</span>
                         <span className="text-xl font-black text-obsidian-950 font-mono">
-                          {currentStory.consequences.operationalImpact.unitsSold.toLocaleString()} uds
+                          {currentStory.consequences.operationalImpact.unitsSold.toLocaleString('es-ES')} uds
                         </span>
                         <span className="text-[10px] text-pastel-700 block font-semibold mt-0.5">
-                          Producción: {currentStory.consequences.operationalImpact.unitsProduced.toLocaleString()}
+                          Producción: {currentStory.consequences.operationalImpact.unitsProduced.toLocaleString('es-ES')} uds
                         </span>
                       </div>
 
@@ -478,7 +468,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                           {currentStory.consequences.operationalImpact.utilizationRate.toFixed(1)}%
                         </span>
                         <span className="text-[10px] text-emerald-800 block font-semibold mt-0.5">
-                          Bufandas al 91.7%
+                          Sin incidencias técnicas
                         </span>
                       </div>
                     </div>
@@ -548,7 +538,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                       </div>
 
                       <div className="bg-pastel-50/60 p-3.5 rounded-2xl border border-pastel-100">
-                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Ranking Industria</span>
+                        <span className="text-[10px] uppercase font-bold text-obsidian-400 block">Ranking por Valor</span>
                         <span className="text-xl font-black text-pastel-700 font-mono">
                           #{currentStory.consequences.competitiveImpact.marketRank} de 7
                         </span>
@@ -573,7 +563,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                     <div className="bg-amber-50/80 p-5 rounded-2xl border border-amber-200/90 space-y-2">
                       <div className="flex items-center gap-2 font-extrabold text-amber-900 text-xs">
                         <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
-                        <span>Reflexión Directiva & Auditoría para el Comité</span>
+                        <span>Reflexión Directiva & Auditoría para el Comité ({currentStory.year})</span>
                       </div>
                       <p className="text-amber-950 leading-relaxed text-xs">
                         {currentStory.consequences.lessonsLearned}
@@ -594,7 +584,7 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                   ← Ronda Anterior
                 </button>
                 <span className="font-mono text-obsidian-400 text-[11px]">
-                  Ronda {selectedPeriod} de {dataset.periods.length}
+                  Ronda {selectedPeriod} de {dataset.periods.length} ({currentStory.year})
                 </span>
                 <button
                   onClick={() => onSelectPeriod(Math.min(dataset.periods.length, selectedPeriod + 1))}
@@ -642,45 +632,45 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Precio Corbatas (Estándar)</td>
-                  <td className="py-2.5 px-4 font-mono">16.20 €</td>
-                  <td className="py-2.5 px-4 font-mono">16.30 €</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">16.50 €</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">16.50 €</td>
+                  <td className="py-2.5 px-4 font-mono">16,20 €</td>
+                  <td className="py-2.5 px-4 font-mono">16,30 €</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">16,50 €</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">16,50 €</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Precio Bufandas (Premium)</td>
-                  <td className="py-2.5 px-4 font-mono">27.90 €</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">28.10 €</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">28.10 €</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">28.10 €</td>
+                  <td className="py-2.5 px-4 font-mono">27,90 €</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">28,10 €</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">28,10 €</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">28,10 €</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Precio Calcetines</td>
-                  <td className="py-2.5 px-4 font-mono">2.90 €</td>
-                  <td className="py-2.5 px-4 font-mono">3.00 €</td>
-                  <td className="py-2.5 px-4 font-mono">3.00 €</td>
-                  <td className="py-2.5 px-4 font-mono">3.00 €</td>
+                  <td className="py-2.5 px-4 font-mono">2,90 €</td>
+                  <td className="py-2.5 px-4 font-mono">3,00 €</td>
+                  <td className="py-2.5 px-4 font-mono">3,00 €</td>
+                  <td className="py-2.5 px-4 font-mono">3,00 €</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Descuento al Canal Comercial</td>
-                  <td className="py-2.5 px-4 font-mono">13.0%</td>
-                  <td className="py-2.5 px-4 font-mono">13.0%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">12.0%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">12.0%</td>
+                  <td className="py-2.5 px-4 font-mono">13,0%</td>
+                  <td className="py-2.5 px-4 font-mono">13,0%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">12,0%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">12,0%</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Incentivos Ventas (Comisiones)</td>
                   <td className="py-2.5 px-4 font-mono text-obsidian-400">0%</td>
                   <td className="py-2.5 px-4 font-mono text-obsidian-400">0%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">3.5% / 4% / 2.5%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">3.5% / 4% / 2.5%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">3,5% / 4% / 2,5%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-pastel-700">3,5% / 4% / 2,5%</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Presupuesto de Marketing</td>
-                  <td className="py-2.5 px-4 font-mono">185,000 €</td>
-                  <td className="py-2.5 px-4 font-mono">110,000 €</td>
-                  <td className="py-2.5 px-4 font-mono">120,000 €</td>
-                  <td className="py-2.5 px-4 font-mono">120,000 €</td>
+                  <td className="py-2.5 px-4 font-mono">185.000 €</td>
+                  <td className="py-2.5 px-4 font-mono">110.000 €</td>
+                  <td className="py-2.5 px-4 font-mono">120.000 €</td>
+                  <td className="py-2.5 px-4 font-mono">120.000 €</td>
                 </tr>
 
                 <tr className="bg-pastel-50/50 font-bold text-obsidian-950">
@@ -697,10 +687,10 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Ocupación de Bufandas</td>
-                  <td className="py-2.5 px-4 font-mono">90.0%</td>
-                  <td className="py-2.5 px-4 font-mono">90.0%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">91.7%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">91.7%</td>
+                  <td className="py-2.5 px-4 font-mono">90,0%</td>
+                  <td className="py-2.5 px-4 font-mono">90,0%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">91,7%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">91,7%</td>
                 </tr>
 
                 <tr className="bg-pastel-50/50 font-bold text-obsidian-950">
@@ -710,38 +700,38 @@ export const DecisionAnalysisView: React.FC<DecisionAnalysisViewProps> = ({
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Facturación Neta Anual</td>
-                  <td className="py-2.5 px-4 font-mono">3,404,863 €</td>
-                  <td className="py-2.5 px-4 font-mono">3,450,661 €</td>
-                  <td className="py-2.5 px-4 font-mono">3,532,401 €</td>
-                  <td className="py-2.5 px-4 font-mono font-black text-obsidian-950">3,561,899 €</td>
+                  <td className="py-2.5 px-4 font-mono">3.404.863 €</td>
+                  <td className="py-2.5 px-4 font-mono">3.450.661 €</td>
+                  <td className="py-2.5 px-4 font-mono">3.532.401 €</td>
+                  <td className="py-2.5 px-4 font-mono font-black text-obsidian-950">3.561.899 €</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium">Margen Bruto Comercial</td>
-                  <td className="py-2.5 px-4 font-mono">33.67%</td>
-                  <td className="py-2.5 px-4 font-mono">32.04%</td>
-                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">35.83%</td>
-                  <td className="py-2.5 px-4 font-mono font-black text-emerald-700">39.50% (Récord)</td>
+                  <td className="py-2.5 px-4 font-mono">33,7%</td>
+                  <td className="py-2.5 px-4 font-mono">32,0%</td>
+                  <td className="py-2.5 px-4 font-mono font-bold text-emerald-700">35,8%</td>
+                  <td className="py-2.5 px-4 font-mono font-black text-emerald-700">39,5% (Récord)</td>
                 </tr>
                 <tr>
-                  <td className="py-2.5 px-4 font-medium">Unidades Vendidas</td>
-                  <td className="py-2.5 px-4 font-mono">242,000 uds</td>
-                  <td className="py-2.5 px-4 font-mono">243,500 uds</td>
-                  <td className="py-2.5 px-4 font-mono">244,018 uds</td>
-                  <td className="py-2.5 px-4 font-mono font-black text-obsidian-950">247,270 uds (#2)</td>
+                  <td className="py-2.5 px-4 font-medium">Unidades Vendidas Exactas</td>
+                  <td className="py-2.5 px-4 font-mono">244.434 uds</td>
+                  <td className="py-2.5 px-4 font-mono">245.245 uds</td>
+                  <td className="py-2.5 px-4 font-mono">244.018 uds</td>
+                  <td className="py-2.5 px-4 font-mono font-black text-obsidian-950">247.270 uds</td>
                 </tr>
                 <tr>
                   <td className="py-2.5 px-4 font-medium text-rose-700 font-bold">Crédito Extraordinario Acumulado</td>
-                  <td className="py-2.5 px-4 font-mono text-rose-700">1,327,680 €</td>
-                  <td className="py-2.5 px-4 font-mono text-rose-700">1,612,439 €</td>
-                  <td className="py-2.5 px-4 font-mono text-rose-700">2,499,420 €</td>
-                  <td className="py-2.5 px-4 font-mono font-black text-rose-700">5,518,020 €</td>
+                  <td className="py-2.5 px-4 font-mono text-rose-700">1.327.680 €</td>
+                  <td className="py-2.5 px-4 font-mono text-rose-700">1.612.439 €</td>
+                  <td className="py-2.5 px-4 font-mono text-rose-700">2.499.420 €</td>
+                  <td className="py-2.5 px-4 font-mono font-black text-rose-700">5.518.020 €</td>
                 </tr>
                 <tr className="bg-pastel-100/70 font-extrabold text-obsidian-950">
                   <td className="py-3 px-4">Valor de la Compañía (Puntos)</td>
-                  <td className="py-3 px-4 font-mono">2,360.3</td>
-                  <td className="py-3 px-4 font-mono text-pastel-700">2,373.1 (Pico)</td>
-                  <td className="py-3 px-4 font-mono">2,288.2</td>
-                  <td className="py-3 px-4 font-mono font-black">2,231.9 (#4)</td>
+                  <td className="py-3 px-4 font-mono">2.360,3 (#4)</td>
+                  <td className="py-3 px-4 font-mono text-pastel-700">2.373,1 (#4 Pico)</td>
+                  <td className="py-3 px-4 font-mono">2.288,2 (#3)</td>
+                  <td className="py-3 px-4 font-mono font-black">2.231,9 (#4)</td>
                 </tr>
               </tbody>
             </table>

@@ -1,11 +1,11 @@
 export interface PeriodDecision {
   period: number;
-  year?: number;
+  year: number;
   firmId: string;
   priceStandard: number;
   pricePremium: number;
-  priceSocks?: number;
-  channelDiscount?: number;
+  priceSocks: number;
+  channelDiscount: number;
   marketingBudget: number;
   salesForceHeadcount: number;
   salesIncentives?: {
@@ -15,7 +15,7 @@ export interface PeriodDecision {
   };
   productionOrdersStandard: number;
   productionOrdersPremium: number;
-  productionOrdersSocks?: number;
+  productionOrdersSocks: number;
   plantShifts: 1 | 2 | 3;
   maintenanceBudget: number;
   qualityControlBudget: number;
@@ -25,18 +25,19 @@ export interface PeriodDecision {
   shortTermLoanRequest: number;
   longTermDebtRepayment: number;
   dividendPayoutRatio: number;
-  extraordinaryCreditEnding?: number;
+  extraordinaryCreditEnding: number;
 }
 
 export interface RoundDecisionStory {
   period: number;
-  year?: number;
+  year: number;
   firmId: string;
   roundTitle: string;
   strategicTheme: string;
   initialState: {
     cashStarting: number;
-    inventoryStartingUnits: number;
+    inventoryStartingValue: number; // En euros (€) según correcciones 19, 28, 36
+    inventoryStartingUnits?: number;
     nominalCapacity: number;
     inheritedSharePrice: number;
     inheritedRank: number;
@@ -48,8 +49,8 @@ export interface RoundDecisionStory {
     commercial: {
       priceStandard: number;
       pricePremium: number;
-      priceSocks?: number;
-      channelDiscount?: number;
+      priceSocks: number;
+      channelDiscount: number;
       marketingBudget: number;
       salesForceCount?: number;
       salesIncentivesSummary?: string;
@@ -58,7 +59,7 @@ export interface RoundDecisionStory {
     production: {
       ordersStandard: number;
       ordersPremium: number;
-      ordersSocks?: number;
+      ordersSocks: number;
       plantShifts: 1 | 2 | 3;
       maintenanceBudget: number;
       qualityControlBudget: number;
@@ -76,7 +77,7 @@ export interface RoundDecisionStory {
       shortTermLoan: number;
       debtRepayment: number;
       dividendPayout: number;
-      extraordinaryCreditImpact?: number;
+      extraordinaryCreditImpact: number;
       financeRationale: string;
     };
     strategicHypothesis: string;
@@ -95,7 +96,7 @@ export interface RoundDecisionStory {
     financialImpact: {
       totalRevenue: number;
       grossProfit: number;
-      grossMargin: number;
+      grossMargin: number; // Porcentual, ej: 33.7, 32.0, 35.8, 39.5
       cogsSummary: string;
       netIncome: number;
       netMargin: number;
@@ -107,8 +108,10 @@ export interface RoundDecisionStory {
     competitiveImpact: {
       endingSharePrice: number;
       sharePriceDelta: number;
-      marketShare: number;
-      marketRank: number;
+      marketShare: number; // Porcentual, ej: 15.0, 16.6, 16.3, 14.3
+      marketRank: number; // Ranking por valor de compañía
+      rankByUnitsSold?: number; // Ranking por unidades vendidas
+      rankByGrossMargin?: number; // Ranking por margen bruto
       competitorMovements: string;
     };
     lessonsLearned: string;
@@ -117,21 +120,23 @@ export interface RoundDecisionStory {
 
 export interface CompanyFinancials {
   period: number;
-  year?: number;
+  year: number;
   firmId: string;
   totalRevenue: number;
   costOfGoodsSold: number;
   grossProfit: number;
-  grossMargin: number;
+  grossMargin: number; // Decimal (ej: 0.337)
   marketingExpenses: number;
-  personnelExpenses?: number;
-  depreciationExpenses?: number;
-  generalExpenses?: number;
+  personnelExpenses: number;
+  rdExpenses: number; // Gastos de I+D
+  depreciationExpenses: number;
+  insolvencyProvisions: number; // Dotación insolvencias
+  generalExpenses: number;
   operatingExpenses: number;
   operatingIncome: number;
   operatingMargin: number;
   interestExpenses: number;
-  extraordinaryItems?: number;
+  extraordinaryItems: number; // Resultados extraordinarios
   taxExpenses: number;
   netIncome: number;
   netMargin: number;
@@ -154,42 +159,56 @@ export interface CompanyFinancials {
 
 export interface ProductionMetrics {
   period: number;
-  year?: number;
+  year: number;
   firmId: string;
   nominalCapacity: number;
   effectiveCapacity: number;
   actualProductionUnits: number;
   capacityUtilizationRate: number;
-  inventoryBeginUnits: number;
+  inventoryBeginUnits?: number;
+  inventoryBeginValue?: number;
   unitsAvailableForSale: number;
   unitsSold: number;
-  inventoryEndUnits: number;
+  inventoryEndUnits?: number;
+  inventoryEndValue?: number;
   stockoutUnits: number;
   stockoutRate: number;
   unitProductionCost: number;
-  products?: {
-    standard: { unitsSold: number; revenue: number; price: number; margin: number; catalogRange: number };
-    premium: { unitsSold: number; revenue: number; price: number; margin: number; catalogRange: number };
-    socks: { unitsSold: number; revenue: number; price: number; margin: number; catalogRange: number };
+  products: {
+    standard: { unitsSold: number; revenue: number; price: number; margin: number; catalogRange: number; narrative: string };
+    premium: { unitsSold: number; revenue: number; price: number; margin: number; catalogRange: number; narrative: string };
+    socks: { unitsSold: number; revenue: number; price: number; margin: number; catalogRange: number; narrative: string };
   };
 }
 
 export interface MarketCompetitorState {
   period: number;
-  year?: number;
+  year: number;
   firmId: string;
   firmName: string;
   isOurFirm: boolean;
   color: string;
   sharePrice: number;
-  marketShareUnits: number;
+  marketShareUnits: number; // Decimal
+  marketShareUnitsPct?: number; // Porcentual (ej: 15.0, 16.6, 16.3, 14.3)
   marketShareRevenue: number;
   totalRevenue: number;
-  grossMargin: number;
+  grossMargin: number; // Decimal
+  grossMarginPct?: number; // Porcentual
   netIncome: number;
   unitsSold: number;
   rankBySharePrice: number;
+  rankByUnitsSold?: number;
+  rankByGrossMargin?: number;
   liquidityRatio?: number;
+}
+
+export interface ValuationComponentYear {
+  parameter: string;
+  score: number;
+  industryMean: number;
+  status: string;
+  isTop?: boolean;
 }
 
 export interface SimulationDataset {
@@ -209,4 +228,5 @@ export interface SimulationDataset {
   financials: CompanyFinancials[];
   operations: ProductionMetrics[];
   competitors: MarketCompetitorState[];
+  valuationComponentsByYear: Record<number, ValuationComponentYear[]>;
 }

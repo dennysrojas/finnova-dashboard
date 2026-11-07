@@ -10,7 +10,8 @@ import {
   Building, 
   FileSpreadsheet,
   ArrowRight,
-  ShieldAlert
+  ShieldAlert,
+  Info
 } from 'lucide-react';
 
 interface PnLDetailViewProps {
@@ -25,7 +26,12 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
   const currentFin = dataset.financials.find(f => f.period === selectedPeriod && f.firmId === dataset.meta.primaryFirmId);
   const prevFin = dataset.financials.find(f => f.period === selectedPeriod - 1 && f.firmId === dataset.meta.primaryFirmId);
 
-  const formatCurrency = (val: number) => `${Math.round(val).toLocaleString('es-ES')} €`;
+  const formatCurrency = (val: number) => {
+    const rounded = Math.round(val);
+    const sign = rounded < 0 ? '-' : '';
+    const absVal = Math.abs(rounded).toLocaleString('es-ES');
+    return `${sign}${absVal} €`;
+  };
 
   if (!currentFin) return null;
 
@@ -34,6 +40,21 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
   return (
     <div className="space-y-6 w-full animate-fadeIn">
       
+      {/* 2029 Alert Banner if P4 */}
+      {selectedPeriod === 4 && (
+        <div className="bg-rose-50 border-2 border-rose-300 rounded-3xl p-5 shadow-sm flex items-start gap-3.5 text-rose-950">
+          <ShieldAlert className="w-6 h-6 text-rose-600 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <h4 className="font-black text-sm uppercase tracking-wide text-rose-900">
+              Alerta de Quiebra Técnica y Asfixia Financiera (Ejercicio 2029)
+            </h4>
+            <p className="text-xs leading-relaxed text-rose-900/90">
+              A pesar del récord en margen bruto comercial (<strong>39,5 %</strong>), los gastos generales acumulados (<strong>3.419.752 €</strong>) provocaron un resultado neto de <strong>-3.399.251 €</strong>. Esto agotó por completo la tesorería (<strong>0 €</strong>) y obligó a activar un crédito extraordinario de rescate de <strong>5.518.020 €</strong>, llevando el patrimonio neto a terreno negativo (<strong>-2.085.073 €</strong>).
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Top Banner */}
       <div className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-7 shadow-sm">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
@@ -50,15 +71,19 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
               Cuenta de Resultados y Balance de Situación
             </h2>
             <p className="text-xs sm:text-sm text-obsidian-600 mt-1 max-w-3xl leading-relaxed">
-              Auditoría contable con polaridad financiera: ingresos favorables en verde menta y costes/deuda en alerta terracota.
+              Auditoría contable completa con todas las partidas de explotación, I+D, insolvencias y partidas extraordinarias.
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <span className="text-xs bg-emerald-50 text-emerald-800 font-bold px-3 py-1.5 rounded-xl border border-emerald-200">
-              Margen: {(currentFin.grossMargin * 100).toFixed(1)}%
+              Margen Bruto: {(currentFin.grossMargin * 100).toFixed(1)}%
             </span>
-            <span className="text-xs bg-rose-50 text-rose-700 font-bold px-3 py-1.5 rounded-xl border border-rose-200">
+            <span className={`text-xs font-bold px-3 py-1.5 rounded-xl border ${
+              bs.extraordinaryCredit > 0 
+                ? 'bg-rose-50 text-rose-700 border-rose-200' 
+                : 'bg-pastel-50 text-pastel-800 border-pastel-200'
+            }`}>
               Crédito Ext.: {formatCurrency(bs.extraordinaryCredit)}
             </span>
           </div>
@@ -76,16 +101,19 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
           </h3>
 
           <div className="space-y-2 text-xs">
+            {/* Ingresos */}
             <div className="flex justify-between py-2 border-b border-pastel-50 font-bold text-obsidian-900">
               <span>(+) Ingresos Totales de Explotación</span>
               <span className="font-mono tabular-nums text-sm text-emerald-700">{formatCurrency(currentFin.totalRevenue)}</span>
             </div>
 
+            {/* COGS */}
             <div className="flex justify-between py-2 border-b border-pastel-50 text-obsidian-600 pl-3">
               <span>(-) Coste Industrial de las Ventas (COGS)</span>
               <span className="font-mono tabular-nums text-rose-600">-{formatCurrency(currentFin.costOfGoodsSold)}</span>
             </div>
 
+            {/* Margen Bruto */}
             <div className="flex justify-between py-2.5 bg-pastel-100/70 rounded-xl px-3 font-extrabold text-obsidian-950">
               <span>(=) Margen Comercial Bruto</span>
               <span className="font-mono tabular-nums text-sm text-pastel-700">
@@ -93,36 +121,65 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
               </span>
             </div>
 
+            {/* Personal */}
             <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
               <span>(-) Gastos de Personal & Red Comercial</span>
               <span className="font-mono tabular-nums">-{formatCurrency(currentFin.personnelExpenses || 0)}</span>
             </div>
 
+            {/* Marketing */}
             <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
               <span>(-) Gastos de Marketing & Marca</span>
               <span className="font-mono tabular-nums">-{formatCurrency(currentFin.marketingExpenses)}</span>
             </div>
 
+            {/* I+D */}
             <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
-              <span>(-) Amortización & Depreciación Fábrica</span>
-              <span className="font-mono tabular-nums">-{formatCurrency(currentFin.depreciationExpenses || 150000)}</span>
+              <span>(-) Gastos de I+D & Innovación</span>
+              <span className="font-mono tabular-nums">-{formatCurrency(currentFin.rdExpenses || 0)}</span>
             </div>
 
+            {/* Amortización */}
+            <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
+              <span>(-) Amortización & Depreciación Fábrica</span>
+              <span className="font-mono tabular-nums">-{formatCurrency(currentFin.depreciationExpenses || 0)}</span>
+            </div>
+
+            {/* Insolvencias */}
+            <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
+              <span>(+/-) Dotación por Insolvencias</span>
+              <span className={`font-mono tabular-nums ${
+                (currentFin.insolvencyProvisions || 0) < 0 ? 'text-emerald-700' : 'text-rose-600'
+              }`}>
+                {formatCurrency(currentFin.insolvencyProvisions || 0)}
+              </span>
+            </div>
+
+            {/* Gastos Generales */}
             <div className="flex justify-between py-1.5 border-b border-pastel-50 text-rose-700 pl-3 font-semibold">
               <span>(-) Gastos Generales de Estructura</span>
               <span className="font-mono tabular-nums">-{formatCurrency(currentFin.generalExpenses || 0)}</span>
             </div>
 
+            {/* Resultado de Explotacion */}
             <div className="flex justify-between py-2.5 bg-rose-50 rounded-xl px-3 font-bold text-rose-900">
               <span>(=) Resultado de Explotación (EBITDA/EBIT)</span>
               <span className="font-mono tabular-nums text-sm text-rose-700">{formatCurrency(currentFin.operatingIncome)}</span>
             </div>
 
+            {/* Gastos Financieros */}
             <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
               <span>(-) Gastos Financieros (Intereses deuda)</span>
               <span className="font-mono tabular-nums">-{formatCurrency(currentFin.interestExpenses)}</span>
             </div>
 
+            {/* Extraordinarios */}
+            <div className="flex justify-between py-1.5 border-b border-pastel-50 text-obsidian-600 pl-3">
+              <span>(+/-) Resultados Extraordinarios</span>
+              <span className="font-mono tabular-nums text-emerald-700">+{formatCurrency(currentFin.extraordinaryItems || 0)}</span>
+            </div>
+
+            {/* Resultado Neto */}
             <div className="flex justify-between py-3 bg-obsidian-950 text-white rounded-xl px-3 font-extrabold">
               <span>(=) Resultado Neto del Ejercicio</span>
               <span className="font-mono tabular-nums text-sm text-pastel-300">{formatCurrency(currentFin.netIncome)}</span>
@@ -155,7 +212,9 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
               </div>
               <div className="flex justify-between py-1 border-b border-pastel-50">
                 <span className="text-obsidian-600">Tesorería Líquida Disponible:</span>
-                <span className="font-mono font-bold text-obsidian-900">{formatCurrency(bs.cashAndEquivalents)}</span>
+                <span className={`font-mono font-bold ${bs.cashAndEquivalents <= 0 ? 'text-rose-600' : 'text-obsidian-900'}`}>
+                  {formatCurrency(bs.cashAndEquivalents)}
+                </span>
               </div>
               <div className="flex justify-between py-1.5 bg-pastel-50 px-2.5 rounded-xl font-extrabold text-obsidian-950">
                 <span>Total Activo:</span>
@@ -177,21 +236,36 @@ export const PnLDetailView: React.FC<PnLDetailViewProps> = ({
                 <span className="font-mono text-obsidian-900">{formatCurrency(bs.shortTermDebt)}</span>
               </div>
 
-              <div className="flex justify-between py-1.5 bg-obsidian-100 px-2.5 rounded-xl font-bold text-obsidian-900">
+              <div className={`flex justify-between py-1.5 px-2.5 rounded-xl font-bold ${
+                bs.shareholdersEquity < 0 
+                  ? 'bg-rose-100 text-rose-900' 
+                  : 'bg-obsidian-100 text-obsidian-900'
+              }`}>
                 <span>Fondos Propios / Patrimonio Neto:</span>
                 <span className="font-mono">{formatCurrency(bs.shareholdersEquity)}</span>
               </div>
             </div>
           </div>
 
-          {/* Diagnostic Note */}
+          {/* Diagnostic Note tailored to period */}
           <div className="bg-amber-50/80 rounded-2xl p-4 border border-amber-200/90 text-xs text-amber-950 space-y-1.5">
             <div className="flex items-center gap-1.5 font-bold text-amber-900">
               <AlertTriangle className="w-4 h-4 text-amber-600" />
-              <span>Conclusión de Auditoría Financiera</span>
+              <span>Conclusión de Auditoría Financiera ({currentFin.year || 2025 + selectedPeriod})</span>
             </div>
             <p className="leading-relaxed">
-              FashionClub logró una de las mejores tasas de margen bruto de la industria (39.50%), pero la falta de amortización preventiva del crédito extraordinario drenó el resultado neto.
+              {selectedPeriod === 1 && (
+                <>En 2026, el margen bruto se situó en <strong>33,7 %</strong> (1.145.916 €). Aunque la rentabilidad industrial fue sólida, los gastos operativos (I+D de 257.620 €, personal de 665.483 € y financieros de 133.379 €) llevaron el resultado neto a <strong>-562.464 €</strong>, requiriendo un crédito extraordinario de 2.000.000 €.</>
+              )}
+              {selectedPeriod === 2 && (
+                <>En 2027, el margen bruto fue del <strong>32,0 %</strong> (1.105.437 €). Los gastos generales aumentaron a 504.171 € y los de personal a 793.464 €, generando un resultado neto de <strong>-646.078 €</strong> y manteniendo el crédito extraordinario en 2.000.000 €.</>
+              )}
+              {selectedPeriod === 3 && (
+                <>En 2028, el margen bruto subió al <strong>35,8 %</strong> (1.265.816 €). Sin embargo, la duplicación de gastos generales (1.317.519 €) y el aumento salarial (959.377 €) ampliaron la pérdida neta a <strong>-1.457.017 €</strong>, incrementando el crédito extraordinario a 3.193.308 €.</>
+              )}
+              {selectedPeriod === 4 && (
+                <>En 2029, FashionClub logró su margen bruto récord de <strong>39,5 %</strong> (1.406.968 €). A pesar de ello, los gastos generales alcanzaron 3.419.752 €, drenando totalmente la tesorería (0 €) y elevando el crédito extraordinario a 5.518.020 €, con un patrimonio neto de -2.085.073 €.</>
+              )}
             </p>
           </div>
 
