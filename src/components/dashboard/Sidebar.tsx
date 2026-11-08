@@ -73,7 +73,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     {
       id: 'report',
       label: 'Informe de Gestión',
-      sublabel: 'Equipo, Metodología & Balance',
+      sublabel: 'Empresa "FashionClub" - Grupo Finnova',
       icon: <Award className="w-4 h-4" />,
     },
   ];

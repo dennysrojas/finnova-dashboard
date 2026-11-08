@@ -282,7 +282,7 @@ export const ManagementReportView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8 max-w-6xl mx-auto pb-16 animate-fadeIn">
+    <div className="space-y-8 w-full pb-16 animate-fadeIn">
       {/* 0. Banner Institucional de la Presentación Oficial */}
       <section className="bg-white border border-pastel-200/90 rounded-3xl p-6 sm:p-8 shadow-sm">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
@@ -296,7 +296,7 @@ export const ManagementReportView: React.FC = () => {
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-obsidian-950 tracking-tight">
-              Informe de Gestión Directiva · Equipo FINNOVA
+              Informe de Gestión - Empresa "FashionClub" - Grupo Finnova
             </h1>
             <p className="text-xs sm:text-sm text-obsidian-600 max-w-3xl leading-relaxed">
               Compañía <strong>FashionClub</strong> &bull; Presentación de resultados, plan de actuación, gobernanza de equipo, internacionalización y balance de la simulación.
